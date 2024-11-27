@@ -1,449 +1,476 @@
 ﻿<!DOCTYPE html>
 <html lang="es">
   <head>
-    <meta charset="utf-8" />
-    <title>Tansen</title>
-    <meta name="keywords" content="" />
-    <meta name="description" content="" />
-    <meta name="author" content="" />
+    <meta charset="utf-8">
+    <title></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon3232.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon1616.png">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+        :root {
+            --primary-color: #0066cc;
+            --secondary-color: #f39c12;
+            --text-color: #333;
+            --bg-color: #f8f9fa;
+            --white: #ffffff;
+        }
 
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,700,700italic|Noto+Sans"
-    />
-    <link
-      rel="stylesheet"
-      href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css"
-    />
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
+        body {
+            font-family: 'Open Sans', sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+        }
 
-    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
-    <link rel="icon" type="image/png" sizes="32x32" href="favicon3232.png" />
-    <link rel="icon" type="image/png" sizes="16x16" href="favicon1616.png" />
-    <link rel="manifest" href="site.webmanifest" />
-    <link rel="mask-icon" href="safari-pinned-tab.svg" color="#5bbad5" />
-    <meta name="msapplication-TileColor" content="#da532c" />
-    <meta name="theme-color" content="#ffffff" />
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
 
-    <link rel="stylesheet" href="css/prod.min.css" />
-    <link rel="stylesheet" href="css/custom.css?date=09042018" />
-    <link rel="stylesheet" href="css/custom-tansen.css?date=01072019" />
-    <!--[if lt IE 9]>
-      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
-  </head>
-  <body>
+        /* Header styles */
+        .navbar-fixed-top {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background-color: var(--white);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            z-index: 1000;
+        }
+
+        .navbar-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+
+        .logos-container {
+            display: flex;
+            align-items: center;
+        }
+
+        .logoPipio-img {
+            height: 50px;
+            width: auto;
+        }
+
+        .nav {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav li {
+            margin-left: 1.5rem;
+        }
+
+        .nav a {
+            color: var(--text-color);
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+
+        .nav a:hover {
+            color: var(--primary-color);
+        }
+
+        /* Hero section */
+        #hero {
+            padding: 100px 0 50px;
+            background: linear-gradient(135deg, var(--primary-color), #3a7bd5);
+            color: var(--white);
+        }
+
+        #hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        #hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+        }
+
+        /* Features section */
+        #features {
+            padding: 80px 0;
+        }
+
+        .featurebox {
+            background-color: var(--white);
+            border-radius: 8px;
+            padding: 2rem;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .featurebox:hover {
+            transform: translateY(-10px);
+        }
+
+        .featurebox img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 50%;
+            margin-bottom: 1rem;
+        }
+
+        /* Gallery section */
+        #gallery {
+            padding: 80px 0;
+            background-color: var(--bg-color);
+        }
+
+        .thumbnails {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .thumbnail {
+            overflow: hidden;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .thumbnail img {
+            width: 100%;
+            height: auto;
+            transition: transform 0.3s ease;
+        }
+
+        .thumbnail:hover img {
+            transform: scale(1.1);
+        }
+
+        /* Contact section */
+        #contact {
+            padding: 80px 0;
+            background-color: var(--white);
+        }
+
+        .form-email-top,
+        .form-email-bottom {
+            background-color: var(--bg-color);
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        input[type="text"],
+        input[type="email"],
+        textarea {
+            width: 100%;
+            padding: 0.75rem;
+            margin-bottom: 1rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 0.75rem 1.5rem;
+            background-color: var(--primary-color);
+            color: var(--white);
+            text-decoration: none;
+            border-radius: 4px;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: #005bb5;
+        }
+
+        /* Footer */
+        #footer {
+            background-color: #333;
+            color: var(--white);
+            padding: 2rem 0;
+            text-align: center;
+        }
+
+        /* Responsive design */
+        @media (max-width: 768px) {
+            .navbar-inner {
+                flex-direction: column;
+            }
+
+            .nav {
+                margin-top: 1rem;
+            }
+
+            .nav li {
+                margin: 0.5rem 0;
+            }
+
+            #hero {
+                text-align: center;
+            }
+
+            .featurebox {
+                margin-bottom: 2rem;
+            }
+        }
+
+        /* Estilos para la galería de videos */
+        #termocontraccion {
+            padding: 80px 0;
+            background-color: var(--bg-color);
+        }
+
+        .video-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .video-item {
+            background-color: var(--white);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .video-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .video-thumbnail {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+            height: 0;
+            overflow: hidden;
+        }
+
+        .video-thumbnail iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        .video-title {
+            padding: 1rem;
+            text-align: center;
+            font-weight: 600;
+            color: var(--text-color);
+        }
+    </style>
     <header id="header" class="navbar navbar-fixed-top navbar-inverse">
       <div class="navbar-inner">
-        <div class="container">
-          <a
-            class="btn btn-navbar"
-            data-toggle="collapse"
-            data-target=".nav-collapse"
-          >
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </a>
-
-          <a class="brand" href="">
-            <div class="logos-container">
-              <img src="img/logo-img.png" class="logo-img" />
-              <img src="img/logo-text.png" class="logo-text" />
-            </div>
-          </a>
-
-          <nav class="nav-collapse collapse">
-            <ul class="nav pull-right">
-              <li>
-                <a href="#hero"><i class="icon-home"></i> Home </a>
-              </li>
-              <li class="divider-vertical"></li>
-              <li>
-                <a href="#gallery"><i class="icon-camera"></i> Fotos </a>
-              </li>
-              <li class="divider-vertical"></li>
-              <li>
-                <a href="#termocontraccion"
-                  ><i class="icon-fire"></i> Equipos de Termocontracción
-                </a>
-              </li>
-              <li class="divider-vertical"></li>
-              <li>
-                <a href="#contact"><i class="icon-comment"></i> Contacto</a>
-              </li>
-            </ul>
-          </nav>
-        </div>
-      </div>
-    </header>
-
-    <div id="hero">
-      <div id="hero-slider" class="flexslider">
-        <ul class="slides">
-          <li id="slider-item-tansen">
-            <div class="container">
-              <div class="row">
-                <div class="span6 topmargin15">
-                  <h1>
-                    <!-- TEXTO 1 -->
-                    T-Film ®<br /><br />
-                    Poliolefina (POF) Termocontraible<br />
-                  </h1>
-                  <p class="lead">
-                    <!-- TEXTO 2 -->
-                    Novedad en Argentina<br />
-                    Excelente relación Calidad vs Costo <br />
-                    Reemplazo IDEAL para POF conocidas
-
-                    <br />Variedad de Anchos y Espesores
-                  </p>
-                </div>
-                <div class="span6">
-                  <div
-                    id="contact-form"
-                    class="contact-form-main form-email-top"
-                  >
-                    <form>
-                      <fieldset>
-                        <p>
-                          <label><strong>Nombre y Apellido</strong></label>
-                          <input
-                            id="name"
-                            name="name"
-                            type="text"
-                            placeholder=""
-                          />
-                        </p>
-                        <p>
-                          <label><strong>Email</strong></label>
-                          <input
-                            id="email"
-                            name="email"
-                            type="email"
-                            placeholder=""
-                          />
-                        </p>
-                        <p>
-                          <label><strong>Consulta</strong></label>
-                          <textarea
-                            id="message"
-                            name="message"
-                            rows="3"
-                            placeholder="Escriba su consulta.."
-                          ></textarea>
-                        </p>
-                        <p>
-                          <button id="btn_enviar" type="submit" class="btn">
-                            Enviar
-                          </button>
-                        </p>
-                        <p class="sub" style="display: none"></p>
-                      </fieldset>
-                    </form>
+          <div class="container">
+              <a class="brand" href="#">
+                  <div class="logos-container">
+                      <img src="img/logo1.png" class="logo" alt="logo1" style="height: 40px; width: auto;">
+                      <img src="img/logo.png" class="logo1" alt="logo" style="height: 40px; width: auto; margin-left: 10px;">
                   </div>
+              </a>
+              <nav class="nav-collapse" style="margin-left: auto; display: flex; align-items: center;">
+                  <ul class="nav" style="margin-left: auto;">
+                      <li><a href="#hero"><i class="fas fa-home"></i> Home </a></li>
+                      <li><a href="#features"><i class="fas fa-cogs"></i> Características </a></li>
+                      <li><a href="#gallery"><i class="fas fa-images"></i> Fotos </a></li>
+                      <li><a href="#contact"><i class="fas fa-envelope"></i> Contacto</a></li>
+                  </ul>
+              </nav>
+          </div>
+      </div>
+  </header>
+  
+  <header id="header" class="navbar navbar-fixed-top navbar-inverse">
+    <div class="navbar-inner">
+        <div class="container">
+            <a class="brand" href="#">
+                <div class="logos-container">
+                    <img src="img/logo1.png" class="logo" alt="logo1" style="height: 40px; width: auto;">
+                    <img src="img/logo.png" class="logo1" alt="logo" style="height: 40px; width: auto; margin-left: 10px;">
                 </div>
-              </div>
-            </div>
-          </li>
-        </ul>
-      </div>
-    </div>
-
-    <div id="features">
-      <div class="container">
-        <div class="row">
-          <div class="span4 featurebox">
-            <p><img src="img/icon-feature3.png" alt="" /></p>
-            <h3>
-              <!-- TEXTO TITULO ICONO 1 -->
-              DIFERENTES ANCHOS
-            </h3>
-            <p>
-              <!-- TEXTO DESCRIPCION ICONO 1 -->
-              Entre 20 y 70 centimetros
-            </p>
-          </div>
-          <div class="span4 featurebox">
-            <p><img src="img/icon coin.png" alt="" /></p>
-            <h3>
-              <!-- TEXTO TITULO ICONO 2 -->
-              ECONOMÍA
-            </h3>
-            <p>
-              <!-- TEXTO DESCRIPCION ICONO 2 -->
-              Ahorre dinero sin perder calidad
-            </p>
-          </div>
-          <div class="span4 featurebox">
-            <p><img src="img/icon warehouse.png" alt="" /></p>
-            <h3>
-              <!-- TEXTO TITULO ICONO 3 -->
-              AMPLIO STOCK
-            </h3>
-            <p>
-              <!-- TEXTO DESCRIPCION ICONO 3 -->
-              Entregas en 72 horas
-            </p>
-          </div>
+            </a>
+            <nav class="nav-collapse" style="margin-left: auto; display: flex; align-items: center;">
+                <ul class="nav" style="margin-left: auto;">
+                    <li><a href="#hero"><i class="fas fa-home"></i> Home </a></li>
+                    <li><a href="#features"><i class="fas fa-cogs"></i> Características </a></li>
+                    <li><a href="#gallery"><i class="fas fa-images"></i> Fotos </a></li>
+                    <li><a href="#contact"><i class="fas fa-envelope"></i> Contacto</a></li>
+                </ul>
+            </nav>
         </div>
-      </div>
     </div>
+</header>
+
+<div id="hero" style="background-color: #f1f1f1; padding: 60px 0; margin-top: 100px;">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6" style="display: flex; flex-direction: column; align-items: flex-start;">
+                <div style="background-image: url('img/banner.png'); background-size: contain; background-repeat: no-repeat; width: 100%; height: 250px; margin-bottom: 20px;"></div>
+                <h1 style="margin-bottom: 10px;"></h1>
+                <h2 style="margin-bottom: 20px;"></h2>
+                <div id="contact-form" class="form-email-top" style="max-width: 500px; background-color: #e0f7fa; padding: 20px; border-radius: 5px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+                    <form>
+                        <input type="text" name="name" placeholder="Nombre y Apellido" required style="width: 100%; margin-bottom: 10px;">
+                        <input type="email" name="email" placeholder="Email" required style="width: 100%; margin-bottom: 10px;">
+                        <textarea name="message" rows="4" placeholder="Escriba su consulta.." required style="width: 100%; margin-bottom: 10px;"></textarea>
+                        <button type="submit" class="btn" style="width: 100%;">Enviar</button>
+                    </form>
+                    <a href="#contact" class="btn" style="width: 100%; margin-top: 10px;">Solicitar Información</a>
+                </div>
+            </div>
+            <div class="col-md-6" style="display: flex; align-items: center;">
+                <p style="padding: 20px; text-align: left; color: #333; font-size: 1.5em; font-weight: bold; margin-top: 0;">
+                    Novedad en Argentina<br>
+                    Excelente relación Calidad vs Costo<br>
+                    Reemplazo IDEAL para POF conocidas<br>
+                    Variedad de Anchos y Espesores
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- Imagen banner2 de extremo a extremo -->
+<div style="width: 100%; overflow: hidden; margin-top: 20px;">
+  <img src="img/banner2.png" alt="Banner 2" style="width: 100%; height: auto; display: block;">
+</div>
 
     <div id="gallery">
-      <div class="container">
-        <h2>
-          <!-- TITULO GALERIA -->
-          Fotos
-        </h2>
-        <p class="lead">
-          <!-- DESCRIPCION GALERIA -->
-        </p>
-        <ul class="thumbnails">
-          <li class="span3">
-            <a href="img/juank/POF TFilm 08.jpg" class="thumbnail fancybox"
-              ><img src="img/juank/POF TFilm 08.jpg" alt=""
-            /></a>
-          </li>
-          <li class="span3">
-            <a href="img/juank/POF TFilm 13b.jpg" class="thumbnail fancybox"
-              ><img src="img/juank/POF TFilm 13b.jpg" alt=""
-            /></a>
-          </li>
-          <li class="span3">
-            <a href="img/juank/POF TFilm Varias.jpg" class="thumbnail fancybox"
-              ><img src="img/juank/POF TFilm Varias.jpg" alt=""
-            /></a>
-          </li>
-          <li class="span3">
-            <a href="img/juank/POF TFilm 17b.jpg" class="thumbnail fancybox"
-              ><img src="img/juank/POF TFilm 17b.jpg" alt=""
-            /></a>
-          </li>
-        </ul>
-      </div>
+        <div class="container">
+            <h2>Fotos</h2>
+            <div class="thumbnails">
+                <a href="img/1.jpg" class="thumbnail fancybox"><img src="img/1.jpg" alt="La Pipiola 1"></a>
+                <a href="img/2.jpg" class="thumbnail fancybox"><img src="img/2.jpg" alt="La Pipiola 2"></a>
+                <a href="img/3.jpg" class="thumbnail fancybox"><img src="img/3.jpg" alt="La Pipiola 3"></a>
+                <a href="img/4.jpg" class="thumbnail fancybox"><img src="img/4.jpg" alt="La Pipiola 4"></a>
+            </div>
+        </div>
     </div>
 
     <div id="termocontraccion">
-      <div class="container">
-        <h2>
-          <!-- TITULO GALERIA -->
-          Equipos de Termocontracción
-        </h2>
-        <p class="lead">
-          <!-- DESCRIPCION GALERIA -->
-        </p>
-        <ul class="thumbnails">
-          <li class="span4">
-            <a
-              href="https://www.youtube.com/embed/jvJ5bEZTYo0"
-              class="thumbnail fancybox-video"
-              ><img src="img/termo/sl45.jpg" alt=""
-            /></a>
-            <p>Conjugada Manual</p>
-          </li>
-          <li class="span4">
-            <a
-              href="https://www.youtube.com/embed/LAsdt3nRDVA"
-              class="thumbnail fancybox-video"
-              ><img src="img/termo/fp560a.jpg" alt=""
-            /></a>
-            <p>Semi Automáticas</p>
-          </li>
-          <li class="span4">
-            <a
-              href="https://www.youtube.com/embed/2IsshO1M8XU"
-              class="thumbnail fancybox-video"
-              ><img src="img/termo/hs500e.jpg" alt=""
-            /></a>
-            <p>Alta Producción</p>
-          </li>
-        </ul>
-      </div>
-    </div>
-
-    <!-- Contact -->
-    <div id="contact">
-      <div class="container">
-        <h2>Contacto</h2>
-        <div class="row">
-          <!-- Address -->
-          <div id="address" class="span3">
-            <address>
-              <strong>Tansen SRL</strong><br />
-              Renqué Curá 1848. Of 3<br />
-              CABA<br />
-              ARGENTINA
-            </address>
-            <address>
-              Telefono: <a href="tel:+541120612471">(+54 11) 2061 2471</a>
-              <br />
-              E-mail
-              <a href="mailto:ventas@tansen.com.ar">ventas@tansen.com.ar</a>
-            </address>
-          </div>
-          <!-- Address END -->
-
-          <!-- Contact form -->
-          <div id="contact-form" class="span4 form-email-bottom">
-            <form>
-              <fieldset>
-                <p>
-                  <label><strong>Nombre y Apellido</strong></label>
-                  <input id="name" name="name" type="text" placeholder="" />
-                </p>
-                <p>
-                  <label><strong>Email</strong></label>
-                  <input id="email" name="email" type="email" placeholder="" />
-                </p>
-                <p>
-                  <label><strong>Consulta</strong></label>
-                  <textarea
-                    id="message"
-                    name="message"
-                    rows="3"
-                    placeholder="Escriba su consulta.."
-                  ></textarea>
-                </p>
-                <p>
-                  <button id="btn_enviar" type="submit" class="btn">
-                    Enviar
-                  </button>
-                </p>
-                <p class="sub" style="display: none"></p>
-              </fieldset>
-            </form>
-          </div>
-          <!-- Contact form END -->
-
-          <!-- Map -->
-          <div id="map" class="span5">
-            <iframe
-              width="100%"
-              height="310"
-              frameborder="0"
-              scrolling="no"
-              marginheight="0"
-              marginwidth="0"
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3283.299872264993!2d-58.51008838521552!3d-34.62186158045478!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcc9b836a091c3%3A0xf6571d9b5146164!2sTansen+SRL!5e0!3m2!1ses-419!2sar!4v1532812354361"
-            ></iframe>
-          </div>
-          <!-- Map END -->
+        <div class="container">
+            <h2>Equipos de Termocontracción</h2>
+            <div class="video-gallery">
+                <div class="video-item">
+                    <div class="video-thumbnail">
+                        <iframe src="https://www.youtube.com/embed/jvJ5bEZTYo0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                    <div class="video-title">Conjugada Manual</div>
+                </div>
+                <div class="video-item">
+                    <div class="video-thumbnail">
+                        <iframe src="https://www.youtube.com/embed/LAsdt3nRDVA" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                    <div class="video-title">Semi Automáticas</div>
+                </div>
+                <div class="video-item">
+                    <div class="video-thumbnail">
+                        <iframe src="https://www.youtube.com/embed/2IsshO1M8XU" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                    <div class="video-title">Alta Producción</div>
+                </div>
+            </div>
         </div>
-      </div>
     </div>
+
+    <div id="contact" style="background-color: #f9f9f9; padding: 60px 0;">
+      <div class="container">
+          <h2 style="text-align: center; margin-bottom: 40px; font-size: 2.5em; color: #333;">Contacto</h2>
+          <div class="row">
+              <div class="col-md-6" style="display: flex; flex-direction: column; justify-content: center; align-items: flex-start;">
+                  <address style="font-style: normal; line-height: 1.5; color: #555;">
+                      <strong style="font-size: 1.5em;">La Pipiola</strong><br>
+                      Paysandú 923, Wilde<br>
+                      Buenos Aires<br>
+                      ARGENTINA
+                  </address>
+                  <p style="color: #555;">
+                      Teléfono: <a href="tel:+541144349429" style="color: #007bff;">(+54 11) 4434 9429</a><br>
+                      E-mail: <a href="mailto:mauro@adamant.com.ar" style="color: #007bff;">mauro@adamant.com.ar</a>
+                  </p>
+              </div>
+              <div class="col-md-6">
+                  <div id="contact-form" class="form-email-bottom" style="background-color: #e0f7fa; padding: 20px; border-radius: 5px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+                      <form>
+                          <input type="text" name="name" placeholder="Nombre y Apellido" required style="width: 100%; padding: 10px; margin-bottom: 10px; border: 1px solid #ccc; border-radius: 5px;">
+                          <input type="email" name="email" placeholder="Email" required style="width: 100%; padding: 10px; margin-bottom: 10px; border: 1px solid #ccc; border-radius: 5px;">
+                          <textarea name="message" rows="4" placeholder="Escriba su consulta.." required style="width: 100%; padding: 10px; margin-bottom: 10px; border: 1px solid #ccc; border-radius: 5px;"></textarea>
+                          <button type="submit" class="btn" style="width: 100%; padding: 10px; background-color: #007bff; color: white; border: none; border-radius: 5px; cursor: pointer;">Enviar</button>
+                      </form>
+                  </div>
+              </div>
+          </div>
+          <div class="row mt-4">
+              <div class="col-md-12">
+                  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3279.78564303709!2d-58.3319847847675!3d-34.71058618043198!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95a33288edaa8507%3A0x3a208e323f921785!2sPaysand%C3%BA+923%2C+B1875EBS+Wilde%2C+Buenos+Aires!5e0!3m2!1sen!2sar!4v1551444032892" width="100%" height="300" style="border:0; border-radius: 5px;" allowfullscreen="" loading="lazy"></iframe>
+              </div>
+          </div>
+      </div>
+  </div>
 
     <footer id="footer">
-      <div class="container">
-        <p>&copy; 2018 Tansen SRL®.</p>
-      </div>
+        <div class="container">
+            <p>&copy; 2023 La Pipiola ®. Todos los derechos reservados.</p>
+        </div>
     </footer>
 
-    <div class="static bottom-0 left-0 z-50">
-      <a
-        href="https://wa.me/5491153882421"
-        target="_blank"
-        rel="noreferrer"
-        class="fixed bottom-4 left-4 z-50"
-      >
-        <img
-          src="/img/WhatsApp_icon.png"
-          alt="Whatsapp"
-          class="w-16 h-16 rounded-full"
-        />
-      </a>
-    </div>
-
-    <script src="js/jquery-1.8.3.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/jquery.flexslider-min.js"></script>
-    <script src="js/jquery.fitvids.js"></script>
-    <script src="js/jquery.smooth-scroll.min.js"></script>
-    <script src="js/jquery.fancybox-1.3.4.pack.js"></script>
-    <script src="js/contact.js?date=09042018"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script>
     <script>
-      $(document).ready(function () {
-        // Hero slider settings //
-        $("#hero-slider").flexslider({
-          // You should better not change these settings //
-          animation: "slide",
-          controlNav: false,
-          prevText: "&lsaquo;",
-          nextText: "&rsaquo;",
-          // You can change these settings //
-          slideshow: true, //Boolean: Animate slider automatically
-          slideshowSpeed: 600, //Integer: Set the speed of the slideshow cycling, in milliseconds
-          animationSpeed: 600, //Integer: Set the speed of animations, in milliseconds
-        });
-        // General slider settings //
-        $(".flexslider").flexslider({
-          // You should better not change these settings //
-          animation: "slide",
-          prevText: "&lsaquo;",
-          nextText: "&rsaquo;",
-          // You can change these settings //
-          slideshow: true, //Boolean: Animate slider automatically
-          slideshowSpeed: 600, //Integer: Set the speed of the slideshow cycling, in milliseconds
-          animationSpeed: 600, //Integer: Set the speed of animations, in milliseconds
-        });
-        // FitVid
-        $(".container").fitVids();
-        // smoothScroll
-        $("a").smoothScroll();
-        //Fancybox
-        $("a.fancybox").fancybox();
-        $("a.fancybox-video").fancybox({ type: "iframe" });
-      });
-    </script>
+        $(document).ready(function() {
+            $(".fancybox").fancybox();
+            
+            // Smooth scrolling
+            $('a[href^="#"]').on('click', function(event) {
+                var target = $(this.getAttribute('href'));
+                if( target.length ) {
+                    event.preventDefault();
+                    $('html, body').stop().animate({
+                        scrollTop: target.offset().top - 100
+                    }, 1000);
+                }
+            });
 
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script
-      async
-      src="https://www.googletagmanager.com/gtag/js?id=UA-123363285-2"
-    ></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag() {
-        dataLayer.push(arguments);
-      }
-      gtag("js", new Date());
+            // Lazy loading para los iframes de YouTube
+            function loadYouTubeVideos() {
+                $('.video-thumbnail').each(function() {
+                    var $container = $(this);
+                    var $iframe = $container.find('iframe');
+                    
+                    if ($iframe.attr('src') === undefined) {
+                        $iframe.attr('src', $iframe.data('src'));
+                    }
+                });
+            }
 
-      gtag("config", "UA-123363285-2");
-      gtag("config", "AW-794406113");
-    </script>
+            // Cargar videos cuando se hace scroll
+            $(window).on('scroll', function() {
+                loadYouTubeVideos();
+            });
 
-    <!-- Event snippet for Formulario Contacto conversion page
-In your html page, add the snippet and call gtag_report_conversion when someone clicks on the chosen link or button. -->
-    <script>
-      function gtag_report_conversion(url) {
-        var callback = function () {
-          if (typeof url != "undefined") {
-            window.location = url;
-          }
-        };
-        gtag("event", "conversion", {
-          send_to: "AW-794406113/ouWoCIPOhYcBEOHZ5voC",
-          event_callback: callback,
+            // Cargar videos inicialmente visibles
+            loadYouTubeVideos();
         });
-        return false;
-      }
     </script>
-
-    <!-- Event snippet for Whatsapp conversion page
-In your html page, add the snippet and call gtag_report_conversion when someone clicks on the chosen link or button. -->
-    <script>
-      function gtag_report_conversion_whatsapp() {
-        var callback = function () {};
-        gtag("event", "conversion", {
-          send_to: "AW-794406113/Ze5BCJ6J2ocBEOHZ5voC",
-          event_callback: callback,
-        });
-        return false;
-      }
-    </script>
-  </body>
+</body>
 </html>
+
+

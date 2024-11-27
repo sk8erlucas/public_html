@@ -1,276 +1,383 @@
 ﻿<!DOCTYPE html>
 <html lang="es">
 <head>
+    <meta charset="utf-8">
+    <title>La Pipiola</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon3232.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon1616.png">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
 
-<meta charset="utf-8">
-<title>La Pipiola</title>
-<meta name="keywords" content="">
-<meta name="description" content="">
-<meta name="author" content="">
+    <style>
+        :root {
+            --primary-color: #0066cc;
+            --secondary-color: #f39c12;
+            --text-color: #333;
+            --bg-color: #f8f9fa;
+            --white: #ffffff;
+        }
 
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:400,400italic,700,700italic|Noto+Sans">
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+        body {
+            font-family: 'Open Sans', sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+        }
 
-<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="favicon3232.png">
-<link rel="icon" type="image/png" sizes="16x16" href="favicon1616.png">
-<meta name="msapplication-TileColor" content="#da532c">
-<meta name="theme-color" content="#ffffff">
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
 
-<link rel="stylesheet" href="css/prod.min.css">
-<link rel="stylesheet" href="css/custom.css?date=09042018">
-<link rel="stylesheet" href="css/custom-tansen.css?date=30072018">
-<!--[if lt IE 9]>
-	<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-<![endif]-->
+        /* Header styles */
+        .navbar-fixed-top {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background-color: var(--white);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            z-index: 1000;
+        }
 
+        .navbar-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+
+        .logos-container {
+            display: flex;
+            align-items: center;
+        }
+
+        .logoPipio-img {
+            height: 50px;
+            width: auto;
+        }
+
+        .nav {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav li {
+            margin-left: 1.5rem;
+        }
+
+        .nav a {
+            color: var(--text-color);
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+
+        .nav a:hover {
+            color: var(--primary-color);
+        }
+
+        /* Hero section */
+        #hero {
+            padding: 100px 0 50px;
+            background: linear-gradient(135deg, var(--primary-color), #3a7bd5);
+            color: var(--white);
+        }
+
+        #hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        #hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+        }
+
+        /* Features section */
+        #features {
+            padding: 80px 0;
+        }
+
+        .featurebox {
+            background-color: var(--white);
+            border-radius: 8px;
+            padding: 2rem;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .featurebox:hover {
+            transform: translateY(-10px);
+        }
+
+        .featurebox img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 50%;
+            margin-bottom: 1rem;
+        }
+
+        /* Gallery section */
+        #gallery {
+            padding: 80px 0;
+            background-color: var(--bg-color);
+        }
+
+        .thumbnails {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .thumbnail {
+            overflow: hidden;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .thumbnail img {
+            width: 100%;
+            height: auto;
+            transition: transform 0.3s ease;
+        }
+
+        .thumbnail:hover img {
+            transform: scale(1.1);
+        }
+
+        /* Contact section */
+        #contact {
+            padding: 80px 0;
+            background-color: var(--white);
+        }
+
+        .form-email-top,
+        .form-email-bottom {
+            background-color: var(--bg-color);
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        input[type="text"],
+        input[type="email"],
+        textarea {
+            width: 100%;
+            padding: 0.75rem;
+            margin-bottom: 1rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 0.75rem 1.5rem;
+            background-color: var(--primary-color);
+            color: var(--white);
+            text-decoration: none;
+            border-radius: 4px;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: #005bb5;
+        }
+
+        /* Footer */
+        #footer {
+            background-color: #333;
+            color: var(--white);
+            padding: 2rem 0;
+            text-align: center;
+        }
+
+        /* Responsive design */
+        @media (max-width: 768px) {
+            .navbar-inner {
+                flex-direction: column;
+            }
+
+            .nav {
+                margin-top: 1rem;
+            }
+
+            .nav li {
+                margin: 0.5rem 0;
+            }
+
+            #hero {
+                text-align: center;
+            }
+
+            .featurebox {
+                margin-bottom: 2rem;
+            }
+        }
+    </style>
 </head>
 <body>
+    <header id="header" class="navbar navbar-fixed-top navbar-inverse">
+        <div class="navbar-inner">
+            <div class="container">
+                <a class="brand" href="#">
+                    <div class="logos-container">
+                        <img src="img/logoPipio-img.png" class="logoPipio-img" alt="La Pipiola Logo">
+                    </div>
+                </a>
+                <nav class="nav-collapse">
+                    <ul class="nav">
+                        <li><a href="#hero"><i class="fas fa-home"></i> Home </a></li>
+                        <li><a href="#features"><i class="fas fa-cogs"></i> Características </a></li>
+                        <li><a href="#gallery"><i class="fas fa-images"></i> Fotos </a></li>
+                        <li><a href="#contact"><i class="fas fa-envelope"></i> Contacto</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
 
-<header id="header" class="navbar navbar-fixed-top navbar-inverse">
-	<div class="navbar-inner">
-		<div class="container">
-		
-			<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-				<span class="icon-bar"></span>
-				<span class="icon-bar"></span>
-				<span class="icon-bar"></span>
-			</a>
+    <div id="hero">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h1>La Pipiola ®</h1>
+                    <h2>Máquina Selladora de Silobolsas</h2>
+                    <p>
+                        Aprovechamiento TOTAL del Silobolsa<br>
+                        Hermeticidad máxima<br>
+                        Impide ingreso de humedad y brinda mayor conservación del grano<br>
+                        Solicite videos y folleto para más información
+                    </p>
+                    <a href="#contact" class="btn">Solicitar Información</a>
+                </div>
+                <div class="col-md-6">
+                    <div id="contact-form" class="form-email-top">
+                        <form>
+                            <input type="text" name="name" placeholder="Nombre y Apellido" required>
+                            <input type="email" name="email" placeholder="Email" required>
+                            <textarea name="message" rows="4" placeholder="Escriba su consulta.." required></textarea>
+                            <button type="submit" class="btn">Enviar</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
-			<a class="brand" href="">
-				<div class="logos-container">
-					<img src="img/logoPipio-img.png" class="logoPipio-img">
-					<img src="img/logo-text.png" class="logo-text" style="display: none;">
-				</div>
-			</a>
+    <div id="features">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="featurebox">
+                        <img src="img/1.jpg" alt="Excelente diseño">
+                        <h3>EXCELENTE DISEÑO</h3>
+                        <p>Portátil, liviana y con alarma auditiva</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="featurebox">
+                        <img src="img/2.jpg" alt="Pinzas robustas">
+                        <h3>PINZAS ROBUSTAS Y CABLE 8 MTS</h3>
+                        <p>Permite trabajar con comodidad y sin interrupciones</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="featurebox">
+                        <img src="img/3.jpg" alt="Operación manos libres">
+                        <h3>OPERACIÓN MANOS LIBRES</h3>
+                        <p>Presión uniforme y temporizada liberando al operador</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
-			<nav class="nav-collapse collapse">
-				<ul class="nav pull-right">
-					<li><a href="#hero"><i class="icon-fire"></i> Home </a></li>
-					<li class="divider-vertical"></li>
-					<li><a href="#gallery"><i class="icon-camera"></i> Fotos </a></li>
-					<li class="divider-vertical"></li>
-					<li><a href="#contact"><i class="icon-comment"></i> Contacto</a></li>
-				</ul>
-			</nav>
-		</div>
-	</div>
-</header>
+    <div id="gallery">
+        <div class="container">
+            <h2>Fotos</h2>
+            <div class="thumbnails">
+                <a href="img/1.jpg" class="thumbnail fancybox"><img src="img/1.jpg" alt="La Pipiola 1"></a>
+                <a href="img/2.jpg" class="thumbnail fancybox"><img src="img/2.jpg" alt="La Pipiola 2"></a>
+                <a href="img/3.jpg" class="thumbnail fancybox"><img src="img/3.jpg" alt="La Pipiola 3"></a>
+                <a href="img/4.jpg" class="thumbnail fancybox"><img src="img/4.jpg" alt="La Pipiola 4"></a>
+            </div>
+        </div>
+    </div>
 
+    <div id="contact">
+        <div class="container">
+            <h2>Contacto</h2>
+            <div class="row">
+                <div class="col-md-6">
+                    <address>
+                        <strong>La Pipiola</strong><br>
+                        Paysandú 923, Wilde<br>
+                        Buenos Aires<br>
+                        ARGENTINA
+                    </address>
+                    <p>
+                        Teléfono: <a href="tel:+541144349429">(+54 11) 4434 9429</a><br>
+                        E-mail: <a href="mailto:mauro@adamant.com.ar">mauro@adamant.com.ar</a>
+                    </p>
+                </div>
+                <div class="col-md-6">
+                    <div id="contact-form" class="form-email-bottom">
+                        <form>
+                            <input type="text" name="name" placeholder="Nombre y Apellido" required>
+                            <input type="email" name="email" placeholder="Email" required>
+                            <textarea name="message" rows="4" placeholder="Escriba su consulta.." required></textarea>
+                            <button type="submit" class="btn">Enviar</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-4">
+                <div class="col-md-12">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3279.78564303709!2d-58.3319847847675!3d-34.71058618043198!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95a33288edaa8507%3A0x3a208e323f921785!2sPaysand%C3%BA+923%2C+B1875EBS+Wilde%2C+Buenos+Aires!5e0!3m2!1sen!2sar!4v1551444032892" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
 
-<div id="hero">
-	<div id="hero-slider" class="flexslider">
-		<ul class="slides">
-			<li id="slider-item-tansen">
-				<div class="container">
-					<div class="row">
-						<div class="span6 topmargin15">
-							<h1>
-								<!-- TEXTO 1 -->
-								La Pipiola ®<br><br>
-								Máquina Selladora de Silobolsas<br>
-							</h1>
-							<p class="lead">
-								<!-- TEXTO 2 -->
-								Aprovechamiento TOTAL del Silobolsa<br>
-			     					Hermeticidad máxima 	<br>		
-								Impide ingreso de humedad y brinda mayor conservación del grano
-								<br>Solicite videos y folleto para más información 
-									
-							</p>
-						</div>
-						<div class="span6">
-							<div id="contact-form" class="contact-form-main form-email-top">
-								<form>
-									<fieldset>
-										<p><label><strong>Nombre y Apellido</strong></label>
-										<input id="name" name="name" type="text" placeholder=""></p>
-										<p><label><strong>Email</strong></label>
-										<input id="email" name="email" type="email" placeholder=""></p>
-										<p><label><strong>Consulta</strong></label>
-										<textarea id="message" name="message" rows="3" placeholder="Escriba su consulta.."></textarea></p>
-										<p><button id="btn_enviar" type="submit" class="btn">Enviar</button></p>
-										<p class="sub" style="display: none;">
-										</p>
-									</fieldset>
-								</form>
-							</div>
-						</div>
-					</div>
-				</div>
-			</li>
-		</ul>
-	</div>
-</div>
+    <footer id="footer">
+        <div class="container">
+            <p>&copy; 2023 La Pipiola ®. Todos los derechos reservados.</p>
+        </div>
+    </footer>
 
-
-
-<div id="features">
-	<div class="container">
-		<div class="row">
-			<div class="span4 featurebox">
-				<p><img src="img/icon diseno.png" alt=""></p>
-				<h3>
-					<!-- TEXTO TITULO ICONO 1 -->
-					EXCELENTE DISEÑO
-				</h3>
-				<p>
-					<!-- TEXTO DESCRIPCION ICONO 1 -->
-					Portátil, liviana y con alarma auditiva
-				</p>
-			</div>
-			<div class="span4 featurebox">
-				<p><img src="img/icon jumper.png" alt=""></p>
-				<h3>
-					<!-- TEXTO TITULO ICONO 2 -->
-					PINZAS ROBUSTAS Y CABLE 8 MTS
-				</h3>
-				<p>
-					<!-- TEXTO DESCRIPCION ICONO 2 -->
-					Permite trabajar con comodidad y sin interrupciones
-				</p>
-			</div>
-			<div class="span4 featurebox">
-				<p><img src="img/icon manoslibres.png" alt=""></p>
-				<h3>
-					<!-- TEXTO TITULO ICONO 3 -->
-					OPERACIÓN MANOS LIBRES
-				</h3>
-				<p>
-					<!-- TEXTO DESCRIPCION ICONO 3 -->
-					Presión uniforme y temporizada liberando al operador
-				</p>
-			</div>
-		</div>
-	</div>
-</div>
-
-
-<div id="gallery">
-	<div class="container">
-		<h2>
-			<!-- TITULO GALERIA -->
-			Fotos
-		</h2>
-		<p class="lead">
-			<!-- DESCRIPCION GALERIA -->
-			
-		</p>
-		<ul class="thumbnails">
-			<li class="span3"><a href="img/juank/Pipio_1.jpg" class="thumbnail fancybox"><img src="img/juank/Pipio_1.jpg" alt=""></a></li>
-			<li class="span3"><a href="img/juank/Pipio_2.jpg" class="thumbnail fancybox"><img src="img/juank/Pipio_2.jpg" alt=""></a></li>
-			<li class="span3"><a href="img/juank/Pipio_3.jpg" class="thumbnail fancybox"><img src="img/juank/Pipio_3.jpg" alt=""></a></li>
-			<li class="span3"><a href="img/juank/Pipio_6.jpg" class="thumbnail fancybox"><img src="img/juank/Pipio_6.jpg" alt=""></a></li>
-		</ul>
-	</div>
-</div>
-
-<!-- Contact -->
-<div id="contact">
-	<div class="container">
-		<h2>Contacto</h2>
-		<div class="row">
-			
-			<!-- Address -->
-			<div id="address" class="span3">
-				<address>
-					<strong>La Pipiola</strong><br>
-					Paysandú 923, Wilde<br>
-					Buenos Aires<br>
-					ARGENTINA
-				</address>
-				<address>
-					Telefono: <a href="tel:+541144349429">(+54 11) 4434 9429</a> <br>
-					E-mail <a href="mailto:mauro@adamant.com.ar">mauro@adamant.com.ar</a>
-				</address>
-			</div>
-			<!-- Address END -->
-			
-			<!-- Contact form -->
-			<div id="contact-form" class="span4 form-email-bottom">
-				<form>
-					<fieldset>
-						<p><label><strong>Nombre y Apellido</strong></label>
-						<input id="name" name="name" type="text" placeholder=""></p>
-						<p><label><strong>Email</strong></label>
-						<input id="email" name="email" type="email" placeholder=""></p>
-						<p><label><strong>Consulta</strong></label>
-						<textarea id="message" name="message" rows="3" placeholder="Escriba su consulta.."></textarea></p>
-						<p><button id="btn_enviar" type="submit" class="btn">Enviar</button></p>
-						<p class="sub" style="display: none;">
-						</p>
-					</fieldset>
-				</form>
-			</div>
-			<!-- Contact form END -->
-
-			<!-- Map -->
-			<div id="map" class="span5">
-				<iframe width="100%" height="310" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3279.78564303709!2d-58.3319847847675!3d-34.71058618043198!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95a33288edaa8507%3A0x3a208e323f921785!2sPaysand%C3%BA+923%2C+B1875EBS+Wilde%2C+Buenos+Aires!5e0!3m2!1sen!2sar!4v1551444032892"></iframe>
-			</div>
-			<!-- Map END -->
-			
-		</div>
-	</div>
-</div>
-
-<footer id="footer">
-	<div class="container">
-		<p>
-			&copy; 2015 La Pipiola ®.
-		</p>
-	</div>
-</footer>
-
-<!-- <a href="https://wa.me/541161695155/?text=Hola%21%20Quisiera%20m%C3%A1s%20informaci%C3%B3n%20sobre%20la%20Poliolefina%20T-FILM..." 
-   class="whatsapp-float" target="_blank"
-   onclick="gtag_report_conversion_whatsapp();">
-	<i class="fa fa-whatsapp my-float"></i>
-</a> -->
-
-<script src="js/jquery-1.8.3.min.js"></script>
-<script src="js/bootstrap.min.js"></script>
-<script src="js/jquery.flexslider-min.js"></script>
-<script src="js/jquery.fitvids.js"></script>
-<script src="js/jquery.smooth-scroll.min.js"></script>
-<script src="js/jquery.fancybox-1.3.4.pack.js"></script>
-<script src="js/contact.js?date=09042018"></script>
-<script>
-$(document).ready(function() {
-	// Hero slider settings //
-	$('#hero-slider').flexslider({
-		// You should better not change these settings //
-		animation: "slide",
-		controlNav: false,
-		prevText: "&lsaquo;",
-		nextText: "&rsaquo;",
-		// You can change these settings //
-		slideshow: true,		//Boolean: Animate slider automatically
-		slideshowSpeed: 600,	//Integer: Set the speed of the slideshow cycling, in milliseconds
-		animationSpeed: 600		//Integer: Set the speed of animations, in milliseconds
-	});
-	// General slider settings //
-	$('.flexslider').flexslider({
-		// You should better not change these settings //
-		animation: "slide",
-		prevText: "&lsaquo;",
-		nextText: "&rsaquo;",
-		// You can change these settings //
-		slideshow: true,		//Boolean: Animate slider automatically
-		slideshowSpeed: 600,	//Integer: Set the speed of the slideshow cycling, in milliseconds
-		animationSpeed: 600		//Integer: Set the speed of animations, in milliseconds
-	});
-	// FitVid
-    $(".container").fitVids();
-	// smoothScroll
-	$('a').smoothScroll();
-	//Fancybox
-	$("a.fancybox").fancybox();
-});
-</script>
-
-
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $(".fancybox").fancybox();
+            
+            // Smooth scrolling
+            $('a[href^="#"]').on('click', function(event) {
+                var target = $(this.getAttribute('href'));
+                if( target.length ) {
+                    event.preventDefault();
+                    $('html, body').stop().animate({
+                        scrollTop: target.offset().top - 100
+                    }, 1000);
+                }
+            });
+        });
+    </script>
 </body>
 </html>
+
