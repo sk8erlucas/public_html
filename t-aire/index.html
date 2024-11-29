@@ -216,62 +216,189 @@
 	</div>
 </div>
 
-<!-- Contact -->
-<div id="contact">
-	<div class="container">
-		<h2>Contacto</h2>
-		<div class="row">
-			
-			<!-- Address -->
-			<div id="address" class="span3">
-				<address>
-					<strong>Tansen SRL</strong><br>
-					Renqué Curá 1848. Of 3<br>
-					CABA<br>
-					ARGENTINA
-				</address>
-				<address>
-					Telefono: <a href="tel:+541153882421">(+54 11) 5388 2421</a> <br>
-					E-mail <a href="mailto:ventas@tansen.com.ar">ventas@tansen.com.ar</a>
-				</address>
+<section id="contact" style="padding: 40px; background-color: #f9f9f9">
+	<div class="container" style="max-width: 1200px; margin: auto">
+	  <h2
+		class="section-title"
+		style="
+		  text-align: center;
+		  font-size: 2.5rem;
+		  margin-bottom: 20px;
+		  color: #333;
+		"
+	  >
+		Contacto
+	  </h2>
+	  <div
+		class="contact-grid"
+		style="display: flex; justify-content: space-between; flex-wrap: wrap"
+	  >
+		<div
+		  class="contact-info"
+		  style="flex: 1; margin-right: 20px; min-width: 300px"
+		>
+		  <h3
+			style="
+			  font-size: 2rem;
+			  font-weight: bold;
+			  margin-bottom: 20px;
+			  color: #007bff;
+			"
+		  >
+			Tansen SRL
+		  </h3>
+		  <div
+			class="contact-item"
+			style="margin-bottom: 15px; display: flex; align-items: center"
+		  >
+			<i
+			  class="fas fa-map-marker-alt"
+			  style="font-size: 1.5rem; margin-right: 10px"
+			></i>
+			<div>
+			  <p style="margin: 0">Renqué Curá 1848. Of 3</p>
+			  <p style="margin: 0">CABA</p>
+			  <p style="margin: 0">ARGENTINA</p>
 			</div>
-			<!-- Address END -->
-			
-			<!-- Contact form -->
-			<div id="contact-form" class="span4 form-email-bottom">
-				<form>
-					<fieldset>
-						<p><label><strong>Nombre y Apellido</strong></label>
-						<input id="name" name="name" type="text" placeholder=""></p>
-						<p><label><strong>Email</strong></label>
-						<input id="email" name="email" type="email" placeholder=""></p>
-						<p><label><strong>Consulta</strong></label>
-						<textarea id="message" name="message" rows="3" placeholder="Escriba su consulta.."></textarea></p>
-						<p><button id="btn_enviar" type="submit" class="btn">Enviar</button></p>
-						<p class="sub" style="display: none;">
-						</p>
-					</fieldset>
-				</form>
-			</div>
-			<!-- Contact form END -->
-
-			<!-- Map -->
-			<div id="map" class="span5">
-				<iframe width="100%" height="310" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3283.299872264993!2d-58.51008838521552!3d-34.62186158045478!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcc9b836a091c3%3A0xf6571d9b5146164!2sTansen+SRL!5e0!3m2!1ses-419!2sar!4v1532812354361"></iframe>
-			</div>
-			<!-- Map END -->
-			
+		  </div>
+		  <div
+			class="contact-item"
+			style="margin-bottom: 15px; display: flex; align-items: center"
+		  >
+			<i
+			  class="fas fa-phone"
+			  style="font-size: 1.5rem; margin-right: 10px"
+			></i>
+			<a
+			  href="tel:+541144349429"
+			  style="text-decoration: none; color: #007bff"
+			  >(+54 11) 2061 2471</a
+			>
+		  </div>
+		  <div
+			class="contact-item"
+			style="margin-bottom: 15px; display: flex; align-items: center"
+		  >
+			<i
+			  class="fas fa-envelope"
+			  style="font-size: 1.5rem; margin-right: 10px"
+			></i>
+			<a
+			  href="mailto:mauro@adamant.com.ar"
+			  style="text-decoration: none; color: #007bff"
+			  >ventas@tansen.com.ar</a
+			>
+		  </div>
 		</div>
+		<div class="contact-form" style="flex: 1; min-width: 300px">
+		  <div
+			class="form-card"
+			style="
+			  padding: 20px;
+			  background-color: #fff;
+			  border-radius: 8px;
+			  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+			"
+		  >
+			<form id="contact-form">
+			  <div class="form-group" style="margin-bottom: 15px">
+				<input
+				  type="text"
+				  placeholder="Nombre y Apellido"
+				  required
+				  style="
+					width: 100%;
+					padding: 10px;
+					border-radius: 4px;
+					border: 1px solid #ccc;
+				  "
+				/>
+			  </div>
+			  <div class="form-group" style="margin-bottom: 15px">
+				<input
+				  type="email"
+				  placeholder="Email"
+				  required
+				  style="
+					width: 100%;
+					padding: 10px;
+					border-radius: 4px;
+					border: 1px solid #ccc;
+				  "
+				/>
+			  </div>
+			  <div class="form-group" style="margin-bottom: 15px">
+				<textarea
+				  rows="4"
+				  placeholder="Escriba su consulta..."
+				  required
+				  style="
+					width: 100%;
+					padding: 10px;
+					border-radius: 4px;
+					border: 1px solid #ccc;
+				  "
+				></textarea>
+			  </div>
+			  <button
+				type="submit"
+				class="btn"
+				style="
+				  padding: 10px 15px;
+				  background-color: #007bff;
+				  color: white;
+				  border: none;
+				  border-radius: 4px;
+				  cursor: pointer;
+				"
+			  >
+				Enviar
+			  </button>
+			</form>
+		  </div>
+		</div>
+	  </div>
+	  <div class="map-container" style="margin-top: 40px">
+		<iframe
+		  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3283.3017627000304!2d-58.51251072587891!3d-34.621813798647004!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcc9d2dab72a19%3A0x1770265610b50906!2sPje.%20Renque%20Cura%201848%2C%20C1407CMF%20Cdad.%20Aut%C3%B3noma%20de%20Buenos%20Aires%2C%20Argentina!5e0!3m2!1ses-419!2sus!4v1732812022742!5m2!1ses-419!2sus"
+		  width="100%"
+		  height="400"
+		  style="border: 0"
+		  allowfullscreen=""
+		  loading="lazy"
+		></iframe>
+	  </div>
 	</div>
-</div>
+  </section>
 
-<footer id="footer">
-	<div class="container">
-		<p>
-			&copy; 2018 Tansen SRL®.
-		</p>
+  <div class="modal" id="imageModal" style="display: none">
+	<div
+	  class="modal-content"
+	  style="
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background-color: rgba(0, 0, 0, 0.8);
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	  "
+	>
+	  <img
+		src=""
+		alt="Imagen ampliada"
+		style="max-width: 90%; max-height: 90%; border-radius: 8px"
+	  />
 	</div>
-</footer>
+  </div>
+
+  <footer id="footer">
+	<div class="container">
+	  <p>&copy; 2024 Tansen ®. Todos los derechos reservados.</p>
+	</div>
+  </footer>
 
 <!-- <a href="https://wa.me/541161695155/?text=Hola%21%20Quisiera%20m%C3%A1s%20informaci%C3%B3n%20sobre%20la%20Poliolefina%20T-FILM..." 
    class="whatsapp-float" target="_blank"
