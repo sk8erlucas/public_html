@@ -1,385 +1,826 @@
 ﻿<!DOCTYPE html>
 <html lang="es">
-<head>
+  <head>
+    <meta charset="utf-8" />
+    <title>Tansen</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css"
+    />
 
-<!-- Global site tag (gtag.js) - Google Ads: 618026258 -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=AW-618026258"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+    <script src="https://cdn.tailwindcss.com"></script>
 
-  gtag('config', 'AW-618026258');
-</script>
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon3232.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon1616.png" />
+    <meta name="msapplication-TileColor" content="#da532c" />
+    <meta name="theme-color" content="#ffffff" />
 
-<!-- Event snippet for Envio de formulario para clientes potenciales conversion page -->
-<script>
-  gtag('event', 'conversion', {'send_to': 'AW-618026258/DH2tCLm-66kDEJKq2aYC'});
-</script>
+    <style>
+      :root {
+        --primary-color: #2563eb;
+        --primary-hover: #1d4ed8;
+        --secondary-color: #f8fafc;
+        --text-color: #1e293b;
+        --bg-color: #ffffff;
+        --gray-100: #f1f5f9;
+        --gray-200: #e2e8f0;
+        --gray-800: #1e293b;
+        --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+        --shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+        --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1);
+      }
 
-<meta charset="utf-8">
-<title>Tansen</title>
-<meta name="keywords" content="">
-<meta name="description" content="">
-<meta name="author" content="">
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
 
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+      html {
+        scroll-behavior: smooth;
+      }
 
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,700,700italic|Noto+Sans">
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+      body {
+        font-family: "Open Sans", sans-serif;
+        line-height: 1.6;
+        color: var(--text-color);
+        background-color: var(--bg-color);
+      }
 
-<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="favicon3232.png">
-<link rel="icon" type="image/png" sizes="16x16" href="favicon1616.png">
-<link rel="manifest" href="site.webmanifest">
-<link rel="mask-icon" href="safari-pinned-tab.svg" color="#5bbad5">
-<meta name="msapplication-TileColor" content="#da532c">
-<meta name="theme-color" content="#ffffff">
+      .container {
+        width: 90%;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 1rem;
+      }
 
-<link rel="stylesheet" href="css/prod.min.css">
-<link rel="stylesheet" href="css/custom.css?date=20201019">
-<link rel="stylesheet" href="css/custom-tansen.css?date=01072019">
-<!--[if lt IE 9]>
-	<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-<![endif]-->
+      /* Header styles */
+      .navbar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        background-color: var(--bg-color);
+        z-index: 1000;
+        transition: all 0.3s ease;
+      }
 
-</head>
-<body>
+      .navbar.scrolled {
+        box-shadow: var(--shadow);
+        background-color: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(8px);
+      }
 
-<header id="header" class="navbar navbar-fixed-top navbar-inverse">
-	<div class="navbar-inner">
-		<div class="container">
-		
-			<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-				<span class="icon-bar"></span>
-				<span class="icon-bar"></span>
-				<span class="icon-bar"></span>
-			</a>
+      .navbar-inner {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1rem 0;
+      }
 
-			<a class="brand" href="">
-				<div class="logos-container">
-					<img src="img/logo-img.png" class="logo-img">
-					<img src="img/logo-text.png" class="logo-text">
-				</div>
-			</a>
+      .logos-container {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+      }
 
-			<nav class="nav-collapse collapse">
-				<ul class="nav pull-right">
-					<li><a href="#hero"><i class="icon-home"></i> Home </a></li>
-					<li class="divider-vertical"></li>
-					<li><a href="#gallery"><i class="icon-camera"></i> Fotos </a></li>
-					<li class="divider-vertical"></li>
-					<li><a href="#termocontraccion"><i class="icon-fire"></i> Equipos de Termocontracción </a></li>
-					<li class="divider-vertical"></li>
-					<li><a href="#contact"><i class="icon-comment"></i> Contacto</a></li>
-				</ul>
-			</nav>
-		</div>
-	</div>
-</header>
+      .logo {
+        height: 40px;
+        width: auto;
+        transition: transform 0.3s ease;
+      }
 
+      .logo:hover {
+        transform: scale(1.05);
+      }
 
-<div id="hero">
-	<div id="hero-slider" class="flexslider">
-		<ul class="slides">
-			<li id="slider-item-tansen">
-				<div class="container">
-					<div class="row">
-						<div class="span6 topmargin15">
-							<h1>
-								<!-- TEXTO 1 -->
-								<img src="img/logo-t-film2.png" class="logo-text">
-								
-							</h1>
-							<p class="lead">
-								<!-- TEXTO 2 -->
-								Novedad en Argentina<br>
-			     					Excelente relación Calidad vs Costo	<br>		
-								Reemplazo IDEAL para POF conocidas
+      .nav {
+        display: flex;
+        list-style: none;
+        gap: 2rem;
+      }
 
-								<br>Variedad de Anchos y Espesores
-									
-							</p>
-						</div>
-						<div class="span6">
-							<div id="contact-form" class="contact-form-main form-email-top">
-								<form>
-									<fieldset>
-										<p><label><strong>Nombre y Apellido</strong></label>
-										<input id="name" name="name" type="text" placeholder=""></p>
-										<p><label><strong>Email</strong></label>
-										<input id="email" name="email" type="email" placeholder=""></p>
-										<p><label><strong>Consulta</strong></label>
-										<textarea id="message" name="message" rows="3" placeholder="Escriba su consulta.."></textarea></p>
-										<p><button id="btn_enviar" type="submit" class="btn">Enviar</button></p>
-										<p class="sub" style="display: none;">
-										</p>
-									</fieldset>
-								</form>
-							</div>
-						</div>
-					</div>
-				</div>
-			</li>
-		</ul>
-	</div>
-</div>
+      .nav a {
+        color: var(--text-color);
+        text-decoration: none;
+        font-weight: 600;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        transition: all 0.3s ease;
+        padding: 0.5rem 1rem;
+        border-radius: 0.5rem;
+      }
 
+      .nav a:hover {
+        color: var(--primary-color);
+        background-color: var(--gray-100);
+      }
 
+      .nav i {
+        transition: transform 0.3s ease;
+      }
 
-<div id="features">
-	<div class="container">
-		<div class="row">
-			<div class="span4 featurebox">
-				<p><img src="img/icon-feature3.png" alt=""></p>
-				<h3>
-					<!-- TEXTO TITULO ICONO 1 -->
-					DIFERENTES ANCHOS
-				</h3>
-				<p>
-					<!-- TEXTO DESCRIPCION ICONO 1 -->
-					Entre 20 y 70 centimetros
-				</p>
-			</div>
-			<div class="span4 featurebox">
-				<p><img src="img/icon coin.png" alt=""></p>
-				<h3>
-					<!-- TEXTO TITULO ICONO 2 -->
-					ECONOMÍA
-				</h3>
-				<p>
-					<!-- TEXTO DESCRIPCION ICONO 2 -->
-					Ahorre dinero sin perder calidad
-				</p>
-			</div>
-			<div class="span4 featurebox">
-				<p><img src="img/icon warehouse.png" alt=""></p>
-				<h3>
-					<!-- TEXTO TITULO ICONO 3 -->
-					AMPLIO STOCK
-				</h3>
-				<p>
-					<!-- TEXTO DESCRIPCION ICONO 3 -->
-					Entregas en 72 horas
-				</p>
-			</div>
-		</div>
-	</div>
-</div>
+      .nav a:hover i {
+        transform: scale(1.1);
+      }
 
+      .mobile-menu-btn {
+        display: none;
+        background: none;
+        border: none;
+        cursor: pointer;
+        padding: 0.5rem;
+      }
 
-<div id="gallery">
-	<div class="container">
-		<h2>
-			<!-- TITULO GALERIA -->
-			Fotos
-		</h2>
-		<p class="lead">
-			<!-- DESCRIPCION GALERIA -->
-			
-		</p>
-		<ul class="thumbnails">
-			<li class="span3"><a href="img/juank/POF TFilm 08.jpg" class="thumbnail fancybox"><img src="img/juank/POF TFilm 08.jpg" alt=""></a></li>
-			<li class="span3"><a href="img/juank/POF TFilm 13b.jpg" class="thumbnail fancybox"><img src="img/juank/POF TFilm 13b.jpg" alt=""></a></li>
-			<li class="span3"><a href="img/juank/POF TFilm Varias.jpg" class="thumbnail fancybox"><img src="img/juank/POF TFilm Varias.jpg" alt=""></a></li>
-			<li class="span3"><a href="img/juank/POF TFilm 17b.jpg" class="thumbnail fancybox"><img src="img/juank/POF TFilm 17b.jpg" alt=""></a></li>
-		</ul>
-	</div>
-</div>
+      /* Hero section */
+      #hero {
+        padding: 8rem 0 4rem;
+        background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+      }
 
-<div id="termocontraccion">
-	<div class="container">
-		<h2>
-			<!-- TITULO GALERIA -->
-			Equipos de Termocontracción
-		</h2>
-		<p class="lead">
-			<!-- DESCRIPCION GALERIA -->
+      /* Gallery section */
+      #gallery {
+        padding: 5rem 0;
+        background-color: var(--gray-100);
+      }
 
-		</p>
-		<ul class="thumbnails">
-			<li class="span4">
-				<a href="https://www.youtube.com/embed/jvJ5bEZTYo0" class="thumbnail fancybox-video"><img src="img/termo/sl45.jpg" alt=""></a>
-				<p>Conjugada Manual</p>
-			</li>
-			<li class="span4">
-				<a href="https://www.youtube.com/embed/LAsdt3nRDVA" class="thumbnail fancybox-video"><img src="img/termo/fp560a.jpg" alt=""></a>
-				<p>Semi Automáticas</p>
-			</li>
-			<li class="span4">
-					<a href="https://www.youtube.com/embed/2IsshO1M8XU" class="thumbnail fancybox-video"><img src="img/termo/hs500e.jpg" alt=""></a>
-					<p>Alta Producción</p>
-			</li>
-		</ul>
-	</div>
-</div>
+      .section-title {
+        text-align: center;
+        font-size: 2rem;
+        margin-bottom: 3rem;
+        animation: fadeInUp 0.5s ease-out;
+      }
 
-<!-- Contact -->
-<div id="contact">
-	<div class="container">
-		<h2>Contacto</h2>
-		<div class="row">
-			
-			<!-- Address -->
-			<div id="address" class="span3">
-				<address>
-					<strong>Tansen SRL</strong><br>
-					Renqué Curá 1848. Of 3<br>
-					CABA<br>
-					ARGENTINA
-				</address>
-				<address>
-					Telefono: <a href="tel:+541120612471">(+54 11) 2061 2471</a> <br>
-					E-mail <a href="mailto:ventas@tansen.com.ar">ventas@tansen.com.ar</a>
-				</address>
-			</div>
-			<!-- Address END -->
-			
-			<!-- Contact form -->
-			<div id="contact-form" class="span4 form-email-bottom">
-				<form>
-					<fieldset>
-						<p><label><strong>Nombre y Apellido</strong></label>
-						<input id="name" name="name" type="text" placeholder=""></p>
-						<p><label><strong>Email</strong></label>
-						<input id="email" name="email" type="email" placeholder=""></p>
-						<p><label><strong>Consulta</strong></label>
-						<textarea id="message" name="message" rows="3" placeholder="Escriba su consulta.."></textarea></p>
-						<p><button id="btn_enviar" type="submit" class="btn">Enviar</button></p>
-						<p class="sub" style="display: none;">
-						</p>
-					</fieldset>
-				</form>
-			</div>
-			<!-- Contact form END -->
+      .gallery-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 1.5rem;
+      }
 
-			<!-- Map -->
-			<div id="map" class="span5">
-				<iframe width="100%" height="310" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3283.299872264993!2d-58.51008838521552!3d-34.62186158045478!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcc9b836a091c3%3A0xf6571d9b5146164!2sTansen+SRL!5e0!3m2!1ses-419!2sar!4v1532812354361"></iframe>
-			</div>
-			<!-- Map END -->
-			
-		</div>
-	</div>
-</div>
+      .gallery-item {
+        position: relative;
+        border-radius: 0.5rem;
+        overflow: hidden;
+        cursor: pointer;
+        animation: fadeInUp 0.5s ease-out;
+      }
 
-<footer id="footer">
-	<div class="container">
-		<p>
-			&copy; 2018 Tansen SRL®.
-		</p>
-	</div>
-</footer>
+      .gallery-item img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.3s ease;
+      }
 
-<!-- <a href="https://wa.me/541161695155/?text=Hola%21%20Quisiera%20m%C3%A1s%20informaci%C3%B3n%20sobre%20la%20Poliolefina%20T-FILM..." 
-   class="whatsapp-float" target="_blank"
-   onclick="gtag_report_conversion_whatsapp();">
-	<i class="fa fa-whatsapp my-float"></i>
-</a> -->
+      .gallery-item:hover img {
+        transform: scale(1.1);
+      }
 
-<script src="js/jquery-1.8.3.min.js"></script>
-<script src="js/bootstrap.min.js"></script>
-<script src="js/jquery.flexslider-min.js"></script>
-<script src="js/jquery.fitvids.js"></script>
-<script src="js/jquery.smooth-scroll.min.js"></script>
-<script src="js/jquery.fancybox-1.3.4.pack.js"></script>
-<script src="js/contact.js?date=09042018"></script>
-<script>
-$(document).ready(function() {
-	// Hero slider settings //
-	$('#hero-slider').flexslider({
-		// You should better not change these settings //
-		animation: "slide",
-		controlNav: false,
-		prevText: "&lsaquo;",
-		nextText: "&rsaquo;",
-		// You can change these settings //
-		slideshow: true,		//Boolean: Animate slider automatically
-		slideshowSpeed: 600,	//Integer: Set the speed of the slideshow cycling, in milliseconds
-		animationSpeed: 600		//Integer: Set the speed of animations, in milliseconds
-	});
-	// General slider settings //
-	$('.flexslider').flexslider({
-		// You should better not change these settings //
-		animation: "slide",
-		prevText: "&lsaquo;",
-		nextText: "&rsaquo;",
-		// You can change these settings //
-		slideshow: true,		//Boolean: Animate slider automatically
-		slideshowSpeed: 600,	//Integer: Set the speed of the slideshow cycling, in milliseconds
-		animationSpeed: 600		//Integer: Set the speed of animations, in milliseconds
-	});
-	// FitVid
-    $(".container").fitVids();
-	// smoothScroll
-	$('a').smoothScroll();
-	//Fancybox
-	$("a.fancybox").fancybox();
-	$("a.fancybox-video").fancybox({type: 'iframe'});
-});
-</script>
+      .gallery-overlay {
+        position: absolute;
+        inset: 0;
+        background-color: rgba(0, 0, 0, 0.4);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+      }
 
+      .gallery-item:hover .gallery-overlay {
+        opacity: 1;
+      }
 
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-PCYKRCD4P4"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+      .gallery-overlay span {
+        color: white;
+        font-size: 1.125rem;
+        font-weight: 500;
+      }
 
-  gtag('config', 'G-PCYKRCD4P4');
-</script>
+      /* Video gallery */
+      #termocontraccion {
+        padding: 5rem 0;
+        background-color: var(--bg-color);
+      }
 
+      .video-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2rem;
+      }
 
+      .video-card {
+        background-color: var(--bg-color);
+        border-radius: 0.5rem;
+        overflow: hidden;
+        box-shadow: var(--shadow);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        animation: fadeInUp 0.5s ease-out;
+      }
 
+      .video-card:hover {
+        transform: translateY(-5px);
+        box-shadow: var(--shadow-lg);
+      }
 
-<!-- Event snippet for Formulario Contacto conversion page
-In your html page, add the snippet and call gtag_report_conversion when someone clicks on the chosen link or button. -->
-<script>
-function gtag_report_conversion(url) {
-  var callback = function () {
-    if (typeof(url) != 'undefined') {
-      window.location = url;
-    }
-  };
-  gtag('event', 'conversion', {
-      'send_to': 'AW-794406113/ouWoCIPOhYcBEOHZ5voC',
-      'event_callback': callback
-  });
-  return false;
-}
-</script>
+      .video-wrapper {
+        position: relative;
+        padding-bottom: 56.25%;
+        height: 0;
+      }
 
+      .video-wrapper iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border: none;
+      }
 
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-215984835-1">
-</script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+      .video-title {
+        padding: 1rem;
+        text-align: center;
+        font-weight: 600;
+      }
 
-  gtag('config', 'UA-215984835-1');
-</script>
+      /* Contact section */
+      #contact {
+        padding: 5rem 0;
+        background-color: var(--gray-100);
+      }
 
+      .contact-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 3rem;
+      }
 
-<!-- Event snippet for Whatsapp conversion page
-In your html page, add the snippet and call gtag_report_conversion when someone clicks on the chosen link or button. -->
-<script>
-function gtag_report_conversion_whatsapp() {
-  var callback = function () {};
-  gtag('event', 'conversion', {
-      'send_to': 'AW-794406113/Ze5BCJ6J2ocBEOHZ5voC',
-      'event_callback': callback
-  });
-  return false;
-}
-</script>
+      .contact-info {
+        animation: fadeInLeft 0.5s ease-out;
+      }
 
-<!-- Start of HubSpot Embed Code -->
-<script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/8143350.js"></script>
-<!-- End of HubSpot Embed Code -->
+      .contact-form {
+        animation: fadeInRight 0.5s ease-out;
+      }
 
+      .contact-item {
+        display: flex;
+        align-items: flex-start;
+        gap: 1rem;
+        margin-bottom: 1.5rem;
+      }
 
-</body>
+      .contact-item i {
+        color: var(--primary-color);
+        font-size: 1.25rem;
+      }
+
+      .map-container {
+        margin-top: 2rem;
+        border-radius: 0.5rem;
+        overflow: hidden;
+        box-shadow: var(--shadow);
+      }
+
+      /* Footer */
+      #footer {
+        background-color: var(--gray-800);
+        color: white;
+        padding: 2rem 0;
+        text-align: center;
+      }
+
+      /* Animations */
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @keyframes fadeInLeft {
+        from {
+          opacity: 0;
+          transform: translateX(-20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateX(0);
+        }
+      }
+
+      @keyframes fadeInRight {
+        from {
+          opacity: 0;
+          transform: translateX(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateX(0);
+        }
+      }
+
+      .fadeInScroll {
+        view-timeline-name: --image;
+        view-timeline-axis: block;
+        animation-timeline: --image;
+        animation-name: fadeInScroll;
+        animation-range: entry 25% cover 50%;
+        animation-fill-mode: both;
+      }
+
+      @keyframes fadeInScroll {
+        from {
+          opacity: 0;
+          transform: translateY(50px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      /* Modal */
+      .modal {
+        display: none;
+        position: fixed;
+        inset: 0;
+        background-color: rgba(0, 0, 0, 0.8);
+        z-index: 1100;
+        padding: 2rem;
+        animation: fadeIn 0.3s ease-out;
+      }
+
+      .modal.active {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .modal-content {
+        max-width: 90%;
+        max-height: 90vh;
+      }
+
+      .modal-content img {
+        max-width: 100%;
+        max-height: 90vh;
+        object-fit: contain;
+      }
+
+      /* Responsive design */
+      @media (max-width: 768px) {
+        .mobile-menu-btn {
+          display: block;
+        }
+
+        .nav {
+          display: none;
+          position: absolute;
+          top: 100%;
+          left: 0;
+          right: 0;
+          background-color: var(--bg-color);
+          padding: 1rem;
+          flex-direction: column;
+          gap: 0.5rem;
+          box-shadow: var(--shadow);
+        }
+
+        .nav.active {
+          display: flex;
+        }
+
+        .contact-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- Navbar -->
+    <header class="navbar">
+      <div class="container">
+        <div class="navbar-inner">
+          <div class="logos-container">
+            <img src="img/logo1.png" alt="Logo 1" class="logo" />
+            <img src="img/logo.png" alt="Logo 2" class="logo" />
+          </div>
+          <button class="mobile-menu-btn">
+            <i class="fas fa-bars"></i>
+          </button>
+          <nav>
+            <ul class="nav">
+              <li>
+                <a href="/"><i class="fas fa-home"></i>Home</a>
+              </li>
+              <li>
+                <a href="/t-film"><i class="fas fa-sheet-plastic"></i>t-Film</a>
+              </li>
+              <li>
+                <a href="/t-aire"><i class="fas fa-wind"></i>t-Aire</a>
+              </li>
+              <li>
+                <a href="/t-sobre"><i class="fas fa-envelope"></i>t-Sobre</a>
+              </li>
+              <li>
+                <a href="#contact"><i class="fas fa-address-card"></i>Contacto </a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </header>
+
+    <section id="hero" style="display: flex; justify-content: center; align-items: center; min-height: 100vh; width: 100vw; position: relative; overflow: hidden; padding-top: 80px;">
+      <div class="container" style="text-align: center; width: 100%; max-width: 1200px;">
+        <div class="slider" style="position: relative; width: 75%; height: 0; padding-bottom: 42.1875%; margin: 0 auto;">
+          <img src="img/bannerhome.png" alt="Banner principal" class="slide" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: contain;" />
+          <img src="img/bannertexto.png" alt="Banner con texto" class="slide" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: contain; display: none;" />
+          <img src="img/bannerfilm.png" alt="Banner film" class="slide" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: contain; display: none;" />
+          <img src="img/banneraire.png" alt="Banner aire" class="slide" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: contain; display: none;" />
+          <img src="img/bannersobre.png" alt="Banner sobre" class="slide" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: contain; display: none;" />
+        </div>
+      </div>
+    </section>
+
+    <div class="banner-full">
+      <img
+        src="img/banner2.png"
+        alt="Banner 2"
+        style="width: 100%; height: auto; display: block"
+      />
+    </div>
+
+    <section id="gallery">
+      <div class="container">
+        <h2 class="section-title">Fotos</h2>
+        <div class="gallery-grid">
+          <div class="gallery-item fadeInScroll" data-src="img/1.jpg">
+            <img src="img/1.jpg" alt="Tansen 1" />
+            <div class="gallery-overlay">
+              <span>Ver más</span>
+            </div>
+          </div>
+          <div class="gallery-item fadeInScroll" data-src="img/2.jpg">
+            <img src="img/2.jpg" alt="Tansen 2" />
+            <div class="gallery-overlay">
+              <span>Ver más</span>
+            </div>
+          </div>
+          <div class="gallery-item fadeInScroll" data-src="img/3.jpg">
+            <img src="img/3.jpg" alt="Tansen 3" />
+            <div class="gallery-overlay">
+              <span>Ver más</span>
+            </div>
+          </div>
+          <div class="gallery-item fadeInScroll" data-src="img/4.jpg">
+            <img src="img/4.jpg" alt="Tansen 4" />
+            <div class="gallery-overlay">
+              <span>Ver más</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="termocontraccion">
+      <div class="container">
+        <h2 class="section-title">Equipos de Termocontracción</h2>
+        <div class="video-grid">
+          <div class="video-card">
+            <div class="video-wrapper">
+              <iframe
+                src="https://www.youtube.com/embed/jvJ5bEZTYo0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen
+              ></iframe>
+            </div>
+            <div class="video-title">Conjugada Manual</div>
+          </div>
+          <div class="video-card">
+            <div class="video-wrapper">
+              <iframe
+                src="https://www.youtube.com/embed/LAsdt3nRDVA"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen
+              ></iframe>
+            </div>
+            <div class="video-title">Semi Automáticas</div>
+          </div>
+          <div class="video-card">
+            <div class="video-wrapper">
+              <iframe
+                src="https://www.youtube.com/embed/2IsshO1M8XU"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen
+              ></iframe>
+            </div>
+            <div class="video-title">Alta Producción</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" style="padding: 40px; background-color: #f9f9f9">
+      <div class="container" style="max-width: 1200px; margin: auto">
+        <div
+          class="contact-grid"
+          style="display: flex; justify-content: space-between; flex-wrap: wrap"
+        >
+          <div
+            class="contact-info"
+            style="flex: 1; margin-right: 20px; min-width: 300px"
+          >
+            <h3
+              style="
+                font-size: 2rem;
+                font-weight: bold;
+                margin-bottom: 20px;
+                color: #007bff;
+              "
+            >
+              Tansen SRL
+            </h3>
+            <div
+              class="contact-item"
+              style="margin-bottom: 15px; display: flex; align-items: center"
+            >
+              <i
+                class="fas fa-map-marker-alt"
+                style="font-size: 1.5rem; margin-right: 10px"
+              ></i>
+              <div>
+                <p style="margin: 0">Renqué Curá 1848. Of 3</p>
+                <p style="margin: 0">CABA</p>
+                <p style="margin: 0">ARGENTINA</p>
+              </div>
+            </div>
+            <div
+              class="contact-item"
+              style="margin-bottom: 15px; display: flex; align-items: center"
+            >
+              <i
+                class="fas fa-phone"
+                style="font-size: 1.5rem; margin-right: 10px"
+              ></i>
+              <a
+                href="tel:+541144349429"
+                style="text-decoration: none; color: #007bff"
+                >(+54 11) 2061 2471</a
+              >
+            </div>
+            <div
+              class="contact-item"
+              style="margin-bottom: 15px; display: flex; align-items: center"
+            >
+              <i
+                class="fas fa-envelope"
+                style="font-size: 1.5rem; margin-right: 10px"
+              ></i>
+              <a
+                href="mailto:mauro@adamant.com.ar"
+                style="text-decoration: none; color: #007bff"
+                >ventas@tansen.com.ar</a
+              >
+            </div>
+          </div>
+          <div class="contact-form" style="flex: 1; min-width: 300px">
+            <div
+              class="form-card"
+              style="
+                padding: 20px;
+                background-color: #fff;
+                border-radius: 8px;
+                box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+              "
+            >
+              <form id="contact-form">
+                <div class="form-group" style="margin-bottom: 15px">
+                  <input
+                    type="text"
+                    placeholder="Nombre y Apellido"
+                    required
+                    style="
+                      width: 100%;
+                      padding: 10px;
+                      border-radius: 4px;
+                      border: 1px solid #ccc;
+                    "
+                  />
+                </div>
+                <div class="form-group" style="margin-bottom: 15px">
+                  <input
+                    type="email"
+                    placeholder="Email"
+                    required
+                    style="
+                      width: 100%;
+                      padding: 10px;
+                      border-radius: 4px;
+                      border: 1px solid #ccc;
+                    "
+                  />
+                </div>
+                <div class="form-group" style="margin-bottom: 15px">
+                  <textarea
+                    rows="4"
+                    placeholder="Escriba su consulta..."
+                    required
+                    style="
+                      width: 100%;
+                      padding: 10px;
+                      border-radius: 4px;
+                      border: 1px solid #ccc;
+                    "
+                  ></textarea>
+                </div>
+                <button
+                  type="submit"
+                  class="btn"
+                  style="
+                    padding: 10px 15px;
+                    background-color: #007bff;
+                    color: white;
+                    border: none;
+                    border-radius: 4px;
+                    cursor: pointer;
+                  "
+                >
+                  Enviar
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+        <div class="map-container" style="margin-top: 40px">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3283.3017627000304!2d-58.51251072587891!3d-34.621813798647004!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcc9d2dab72a19%3A0x1770265610b50906!2sPje.%20Renque%20Cura%201848%2C%20C1407CMF%20Cdad.%20Aut%C3%B3noma%20de%20Buenos%20Aires%2C%20Argentina!5e0!3m2!1ses-419!2sus!4v1732812022742!5m2!1ses-419!2sus"
+            width="100%"
+            height="400"
+            style="border: 0"
+            allowfullscreen=""
+            loading="lazy"
+          ></iframe>
+        </div>
+      </div>
+    </section>
+
+    <div class="modal" id="imageModal" style="display: none">
+      <div
+        class="modal-content"
+        style="
+          position: fixed;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background-color: rgba(0, 0, 0, 0.8);
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        "
+      >
+        <img
+          src=""
+          alt="Imagen ampliada"
+          style="max-width: 90%; max-height: 90%; border-radius: 8px"
+        />
+      </div>
+    </div>
+
+    <footer id="footer">
+      <div class="container">
+        <p>&copy; 2024 Tansen ®. Todos los derechos reservados.</p>
+      </div>
+    </footer>
+
+    <script>
+      // Navbar scroll effect
+      const navbar = document.querySelector(".navbar");
+      window.addEventListener("scroll", () => {
+        if (window.scrollY > 0) {
+          navbar.classList.add("scrolled");
+        } else {
+          navbar.classList.remove("scrolled");
+        }
+      });
+
+      // Mobile menu toggle
+      const menuBtn = document.querySelector(".mobile-menu-btn");
+      const nav = document.querySelector(".nav");
+      menuBtn.addEventListener("click", () => {
+        nav.classList.toggle("active");
+      });
+
+      // Smooth scroll
+      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener("click", function (e) {
+          e.preventDefault();
+          const target = document.querySelector(this.getAttribute("href"));
+          if (target) {
+            const offset = navbar.offsetHeight;
+            const targetPosition =
+              target.getBoundingClientRect().top + window.pageYOffset - offset;
+            window.scrollTo({
+              top: targetPosition,
+              behavior: "smooth",
+            });
+            // Close mobile menu if open
+            nav.classList.remove("active");
+          }
+        });
+      });
+
+      // Image modal
+      const modal = document.getElementById("imageModal");
+      const modalImg = modal.querySelector("img");
+      const galleryItems = document.querySelectorAll(".gallery-item");
+
+      galleryItems.forEach((item) => {
+        item.addEventListener("click", () => {
+          modal.classList.add("active");
+          modalImg.src = item.dataset.src;
+        });
+      });
+
+      modal.addEventListener("click", () => {
+        modal.classList.remove("active");
+      });
+
+      // Form submissions
+      const forms = document.querySelectorAll("form");
+      forms.forEach((form) => {
+        form.addEventListener("submit", (e) => {
+          e.preventDefault();
+          // Add your form submission logic here
+          alert("Formulario enviado con éxito!");
+          form.reset();
+        });
+      });
+
+      // Intersection Observer for animations
+      const observerOptions = {
+        threshold: 0.1,
+        rootMargin: "0px 0px -50px 0px",
+      };
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.style.opacity = "1";
+            entry.target.style.transform = "translateY(0)";
+          }
+        });
+      }, observerOptions);
+
+      document
+        .querySelectorAll(
+          ".section-title, .gallery-item, .video-card, .contact-info, .contact-form"
+        )
+        .forEach((el) => {
+          el.style.opacity = "0";
+          el.style.transform = "translateY(20px)";
+          observer.observe(el);
+        });
+
+      // Slider functionality
+      let slideIndex = 0;
+      const slides = document.querySelectorAll('.slide');
+
+      function showSlides() {
+        for (let i = 0; i < slides.length; i++) {
+          slides[i].style.display = "none";
+        }
+        slideIndex++;
+        if (slideIndex > slides.length) {slideIndex = 1}
+        slides[slideIndex-1].style.display = "block";
+        setTimeout(showSlides, 3000); // Change image every 3 seconds
+      }
+
+      showSlides(); // Start the slideshow
+    </script>
+  </body>
 </html>
