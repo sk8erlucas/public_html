@@ -538,22 +538,22 @@
         <ul class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6">
           <li>
             <a href="img/T-Sobre01.jpg" class="thumbnail fancybox" data-fancybox="gallery">
-              <img src="img/T-Sobre01.jpg" alt="" class="rounded shadow-lg hover:scale-105 transition-transform duration-300 w-full" />
+              <img src="img/T-Sobre01.jpg" alt="T-Sobre 01" class="rounded shadow-lg hover:scale-105 transition-transform duration-300 w-full" />
             </a>
           </li>
           <li>
             <a href="img/T-Sobre02.jpg" class="thumbnail fancybox" data-fancybox="gallery">
-              <img src="img/T-Sobre02.jpg" alt="" class="rounded shadow-lg hover:scale-105 transition-transform duration-300 w-full" />
+              <img src="img/T-Sobre02.jpg" alt="T-Sobre 02" class="rounded shadow-lg hover:scale-105 transition-transform duration-300 w-full" />
             </a>
           </li>
           <li>
             <a href="img/T-Sobre03.jpg" class="thumbnail fancybox" data-fancybox="gallery">
-              <img src="img/T-Sobre03.jpg" alt="" class="rounded shadow-lg hover:scale-105 transition-transform duration-300 w-full" />
+              <img src="img/T-Sobre03.jpg" alt="T-Sobre 03" class="rounded shadow-lg hover:scale-105 transition-transform duration-300 w-full" />
             </a>
           </li>
           <li>
             <a href="img/T-Sobre04.jpg" class="thumbnail fancybox" data-fancybox="gallery">
-              <img src="img/T-Sobre04.jpg" alt="" class="rounded shadow-lg hover:scale-105 transition-transform duration-300 w-full" />
+              <img src="img/T-Sobre04.jpg" alt="T-Sobre 04" class="rounded shadow-lg hover:scale-105 transition-transform duration-300 w-full" />
             </a>
           </li>
         </ul>
@@ -570,20 +570,82 @@
         </p>
         <ul class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 gap-6">
           <li>
-            <iframe src="https://www.youtube.com/embed/yTbm-GjbdT8" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen class="w-full h-48 rounded shadow-lg"></iframe>
+            <div class="video-wrapper">
+              <iframe src="https://www.youtube.com/embed/yTbm-GjbdT8" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen class="w-full h-48 rounded shadow-lg"></iframe>
+            </div>
           </li>
           <li>
-            <iframe src="https://www.youtube.com/embed/Qkyq97oz5nQ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen class="w-full h-48 rounded shadow-lg"></iframe>
+            <div class="video-wrapper">
+              <iframe src="https://www.youtube.com/embed/Qkyq97oz5nQ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen class="w-full h-48 rounded shadow-lg"></iframe>
+            </div>
           </li>
           <li>
-            <iframe src="https://www.youtube.com/embed/ffVNenFtuxM" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen class="w-full h-48 rounded shadow-lg"></iframe>
+            <div class="video-wrapper">
+              <iframe src="https://www.youtube.com/embed/ffVNenFtuxM" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen class="w-full h-48 rounded shadow-lg"></iframe>
+            </div>
           </li>
           <li>
-            <iframe src="https://www.youtube.com/embed/r3eJfTNPBXY" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen class="w-full h-48 rounded shadow-lg"></iframe>
+            <div class="video-wrapper">
+              <iframe src="https://www.youtube.com/embed/r3eJfTNPBXY" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen class="w-full h-48 rounded shadow-lg"></iframe>
+            </div>
           </li>
         </ul>
       </div>
     </div>
+    
+    <!-- Agregar CSS para Fancybox -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script>
+    
+    <!-- Estilos adicionales -->
+    <style>
+      .gallery-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: rgba(0, 0, 0, 0.5);
+        color: white;
+        opacity: 0;
+        transition: opacity 0.3s;
+      }
+    
+      .gallery-item {
+        position: relative;
+        overflow: hidden;
+      }
+    
+      .gallery-item:hover .gallery-overlay {
+        opacity: 1;
+      }
+    
+      .video-wrapper {
+        position: relative;
+        padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+        height: 0;
+        overflow: hidden;
+      }
+    
+      .video-wrapper iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border-radius: 8px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s;
+      }
+    
+      .video-wrapper:hover iframe {
+        transform: scale(1.05);
+      }
+    </style>
     
     <!-- Agregar CSS para Fancybox -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" />

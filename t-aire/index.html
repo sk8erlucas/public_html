@@ -568,13 +568,13 @@
         </p>
         <ul class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
           <li class="span4">
-            <a href="https://www.youtube.com/embed/yXO2RdqAuhg" class="thumbnail fancybox-video">
+            <a href="https://www.youtube.com/embed/yXO2RdqAuhg" class="thumbnail fancybox-video" data-fancybox="video">
               <img src="img/termo/Pluribol in situ maquina.jpg" alt="" class="rounded shadow-lg hover:scale-105 transition-transform duration-300" />
             </a>
             <p class="text-center mt-2">Pluribol in situ</p>
           </li>
           <li class="span4">
-            <a href="https://www.youtube.com/embed/yJxvcbnnLAE" class="thumbnail fancybox-video">
+            <a href="https://www.youtube.com/embed/yJxvcbnnLAE" class="thumbnail fancybox-video" data-fancybox="video">
               <img src="img/termo/Dispensador T-Aire.jpg" alt="" class="rounded shadow-lg hover:scale-105 transition-transform duration-300" />
             </a>
             <p class="text-center mt-2">Dispensadores de bolsas</p>
@@ -600,6 +600,66 @@
         border-radius: 50%;
         padding: 5px;
         cursor: pointer;
+      }
+    
+      /* Estilos adicionales para mejorar la presentación */
+      .gallery-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: rgba(0, 0, 0, 0.5);
+        color: white;
+        opacity: 0;
+        transition: opacity 0.3s;
+      }
+    
+      .gallery-item {
+        position: relative;
+        overflow: hidden;
+      }
+    
+      .gallery-item:hover .gallery-overlay {
+        opacity: 1;
+      }
+    
+      /* Efectos para tarjetas de videos */
+      .video-card {
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s, box-shadow 0.3s;
+      }
+    
+      .video-card:hover {
+        transform: scale(1.05);
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+      }
+    
+      .video-wrapper {
+        position: relative;
+        padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+        height: 0;
+        overflow: hidden;
+      }
+    
+      .video-wrapper iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+      }
+    
+      .video-title {
+        padding: 10px;
+        text-align: center;
+        font-weight: bold;
+        background: #f8f8f8;
       }
     </style>
 
