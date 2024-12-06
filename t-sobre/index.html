@@ -550,6 +550,44 @@
       </div>
     </div>  
 
+    <style>
+      #features {
+        padding: 2rem 0;
+      }
+    
+      .row {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+      }
+    
+      .featurebox {
+        flex: 1 1 30%; /* Flex-grow, flex-shrink, flex-basis */
+        margin: 10px; /* Espaciado entre tarjetas */
+      }
+    
+      .card {
+        transition: transform 0.3s, box-shadow 0.3s;
+      }
+    
+      .card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+      }
+    
+      .icon-size {
+        width: 80px; /* Ajusta el tamaño como desees */
+        height: auto; /* Mantiene la proporción */
+        margin: 0 auto 16px; /* Centra la imagen y añade espaciado inferior */
+      }
+    
+      @media (max-width: 768px) {
+        .featurebox {
+          flex: 1 1 100%; /* Una tarjeta por fila en pantallas pequeñas */
+        }
+      }
+    </style>
+
     <div id="gallery" class="bg-gray-100 py-8">
       <div class="container">
         <h2 class="text-3xl font-bold text-center mb-4">Fotos</h2>
