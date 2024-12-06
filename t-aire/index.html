@@ -582,7 +582,7 @@
         }
       }
     </style>
-    
+
     <div id="gallery" class="bg-gray-100 py-8">
       <div class="container">
         <h2 class="text-3xl font-bold text-center mb-4">Fotos</h2>
@@ -623,78 +623,95 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script>
     
-    <!-- Estilos adicionales -->
-    <style>
-      .gallery-overlay {
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        background: rgba(0, 0, 0, 0.5);
-        color: white;
-        opacity: 0;
-        transition: opacity 0.3s;
-      }
-    
-      .gallery-item {
-        position: relative;
-        overflow: hidden;
-      }
-    
-      .gallery-item:hover .gallery-overlay {
-        opacity: 1;
-      }
-    
-      .video-wrapper {
-        position: relative;
-        padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
-        height: 0;
-        overflow: hidden;
-      }
-    
-      .video-wrapper iframe {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        border-radius: 8px;
-        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-        transition: transform 0.3s;
-      }
-    
-      .video-wrapper:hover iframe {
-        transform: scale(1.05);
-      }
-    </style>
+<!-- Estilos adicionales -->
+<style>
+  .gallery-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
 
-    
-    <div id="termocontraccion" class="bg-gray-100 py-8">
-      <div class="container">
-        <h2 class="text-3xl font-bold text-center mb-4">Equipos de Inflado y Dispenser de bolsas</h2>
-        <p class="lead text-center mb-6">
-          Conoce nuestros dispensadores y equipos de inflado a través de videos.
-        </p>
-        <ul class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-          <li class="span4">
-            <a href="https://www.youtube.com/embed/yXO2RdqAuhg" class="thumbnail fancybox-video" data-fancybox="video">
-              <img src="img/termo/Pluribol in situ maquina.jpg" alt="" class="rounded shadow-lg hover:scale-105 transition-transform duration-300" />
-            </a>
-            <p class="text-center mt-2">Pluribol in situ</p>
-          </li>
-          <li class="span4">
-            <a href="https://www.youtube.com/embed/yJxvcbnnLAE" class="thumbnail fancybox-video" data-fancybox="video">
-              <img src="img/termo/Dispensador T-Aire.jpg" alt="" class="rounded shadow-lg hover:scale-105 transition-transform duration-300" />
-            </a>
-            <p class="text-center mt-2">Dispensadores de bolsas</p>
-          </li>
-        </ul>
-      </div>
-    </div>
+  .gallery-item {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .gallery-item:hover .gallery-overlay {
+    opacity: 1;
+  }
+
+  .video-wrapper {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+    height: 0;
+    overflow: hidden;
+    border: 4px solid #f00; /* Rojo para simular el marco de YouTube */
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+  }
+
+  .video-wrapper iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+    transition: transform 0.3s;
+  }
+
+  .video-wrapper:hover iframe {
+    transform: scale(1.05);
+  }
+
+  .play-icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 50px;
+    color: white;
+    opacity: 0.8;
+  }
+</style>
+
+<div id="termocontraccion" class="bg-gray-100 py-8">
+  <div class="container">
+    <h2 class="text-3xl font-bold text-center mb-4">Equipos de Inflado y Dispenser de bolsas</h2>
+    <p class="lead text-center mb-6">
+      Conoce nuestros dispensadores y equipos de inflado a través de videos.
+    </p>
+    <ul class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+      <li class="span4">
+        <div class="video-wrapper">
+          <a href="https://www.youtube.com/embed/yXO2RdqAuhg" class="thumbnail fancybox-video" data-fancybox="video">
+            <iframe src="https://www.youtube.com/embed/yXO2RdqAuhg" allowfullscreen></iframe>
+            <div class="play-icon">▶</div>
+          </a>
+        </div>
+        <p class="text-center mt-2">Pluribol in situ</p>
+      </li>
+      <li class="span4">
+        <div class="video-wrapper">
+          <a href="https://www.youtube.com/embed/yJxvcbnnLAE" class="thumbnail fancybox-video" data-fancybox="video">
+            <iframe src="https://www.youtube.com/embed/yJxvcbnnLAE" allowfullscreen></iframe>
+            <div class="play-icon">▶</div>
+          </a>
+        </div>
+        <p class="text-center mt-2">Dispensadores de bolsas</p>
+      </li>
+    </ul>
+  </div>
+</div>
     
     
 
