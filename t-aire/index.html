@@ -21,6 +21,8 @@
       href="../img/favicon.ico"
     />
 
+    <link rel="stylesheet" href="../css/shared.css" />
+
     <link
       rel="stylesheet"
       href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css"
@@ -536,7 +538,7 @@
       </div>
     </section>
 
-    <div id="features" class="bg-gray-100 py-8">
+    <div id="features" class="bg-gray-100 py-8 fadeInScroll">
       <div class="max-w-screen-xl px-4 mx-auto">
         <h2 class="text-3xl font-bold text-center mb-4">
           Características Destacadas
@@ -600,7 +602,7 @@
     </style>
 
     <div id="gallery" class="bg-gray-100 py-8">
-      <div class="container">
+      <div class="container fadeInScroll">
         <h2 class="text-3xl font-bold text-center mb-4">Fotos</h2>
         <p class="lead text-center mb-6">
           Descubre nuestra variedad de productos a través de imágenes.
@@ -661,8 +663,6 @@
         </ul>
       </div>
     </div>
-
-    <hr class="my-8" />
 
     <!-- Agregar CSS para Fancybox -->
     <link
@@ -733,7 +733,7 @@
       }
     </style>
 
-    <div id="termocontraccion" class="bg-gray-100 py-8">
+    <div id="termocontraccion" class="bg-gray-100 py-8 fadeInScroll">
       <div class="container">
         <h2 class="text-3xl font-bold text-center mb-4">
           Equipos de Inflado y Dispenser de bolsas
@@ -778,7 +778,7 @@
       </div>
     </div>
 
-    <section id="contact" style="padding: 40px; background-color: #f9f9f9">
+    <section id="contact" class="fadeInScroll" style="padding: 40px; background-color: #f9f9f9">
       <div class="container" style="max-width: 1200px; margin: auto">
         <div
           class="contact-grid"
@@ -1017,8 +1017,9 @@
         form.addEventListener("submit", (e) => {
           e.preventDefault();
           // Add your form submission logic here
-          alert("Formulario enviado con éxito!");
+
           form.reset();
+          window.location.href = "/sucessContact/index.html";
         });
       });
 

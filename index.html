@@ -21,6 +21,8 @@
     />
     <script src="https://cdn.tailwindcss.com"></script>
 
+    <link rel="stylesheet" href="./css/shared.css" />
+
     <meta name="msapplication-TileColor" content="#da532c" />
     <meta name="theme-color" content="#ffffff" />
 
@@ -371,26 +373,6 @@
         }
       }
 
-      .fadeInScroll {
-        view-timeline-name: --image;
-        view-timeline-axis: block;
-        animation-timeline: --image;
-        animation-name: fadeInScroll;
-        animation-range: entry 25% cover 50%;
-        animation-fill-mode: both;
-      }
-
-      @keyframes fadeInScroll {
-        from {
-          opacity: 0;
-          transform: translateY(50px);
-        }
-        to {
-          opacity: 1;
-          transform: translateY(0);
-        }
-      }
-
       /* Modal */
       .modal {
         display: none;
@@ -540,7 +522,7 @@
     <hr class="border-gray-300 my-2" />
 
     <!-- Nosotros section -->
-    <section class="py-24 relative">
+    <section class="py-24 relative fadeInScroll">
       <div class="w-full max-w-7xl px-4 md:px-5 lg:px-5 mx-auto">
         <div
           class="w-full justify-start items-center gap-12 grid lg:grid-cols-2 grid-cols-1"
@@ -553,7 +535,7 @@
             >
               <img
                 class="rounded-xl object-cover"
-                src="/img/nosotros.jpeg"
+                src="/img/about.jpg"
                 alt="about Us image"
               />
             </div>
@@ -626,7 +608,7 @@
     <hr class="border-gray-300 my-2" />
 
     <!-- Sección de imágenes y botones -->
-    <section class="bg-white py-8">
+    <section class="bg-white py-8 fadeInScroll">
       <div class="max-w-screen-xl px-4 mx-auto lg:py-16">
         <h2 class="text-2xl font-bold text-center mb-8">
           Descubre Nuestras Novedades
@@ -720,7 +702,7 @@
     </style>
 
     <!-- Contact -->
-    <section id="contact" style="padding: 40px; background-color: #f9f9f9">
+    <section id="contact" style="padding: 40px; background-color: #f9f9f9" class="fadeInScroll">
       <div class="container" style="max-width: 1200px; margin: auto">
         <div
           class="contact-grid"
@@ -961,8 +943,9 @@
         form.addEventListener("submit", (e) => {
           e.preventDefault();
           // Add your form submission logic here
-          alert("Formulario enviado con éxito!");
+
           form.reset();
+          window.location.href = "/sucessContact/index.html";
         });
       });
 
