@@ -19,6 +19,13 @@
     />
     <script src="https://cdn.tailwindcss.com"></script>
 
+    <link
+      rel="icon"
+      type="image/icon"
+      sizes="16x16"
+      href="../img/favicon.ico"
+    />
+
     <link rel="stylesheet" href="../css/shared.css" />
 
     <meta name="msapplication-TileColor" content="#da532c" />
@@ -613,14 +620,13 @@
     <hr />
 
     <!-- Gallery -->
-    <div id="gallery" class="bg-gray-100 py-8">
+    <section id="gallery" class="bg-gray-100 py-8">
       <div class="container fadeInScroll">
-        <h2 class="text-3xl font-bold text-center mb-4">Fotos</h2>
-        <p class="lead text-center mb-6">
-          Descubre nuestra variedad de productos a través de imágenes.
-        </p>
-        <ul class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6">
-          <li>
+        <h2 class="section-title text-3xl font-bold text-center mb-4">Fotos</h2>
+        <div
+          class="gallery-grid grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6"
+        >
+          <div class="gallery-item">
             <a
               href="img/T-Sobre01.jpg"
               class="thumbnail fancybox"
@@ -628,12 +634,15 @@
             >
               <img
                 src="img/T-Sobre01.jpg"
-                alt="T-Sobre 01"
+                alt="Tansen 1"
                 class="rounded shadow-lg hover:scale-105 transition-transform duration-300 w-full"
               />
+              <div class="gallery-overlay">
+                <span>Ampliar</span>
+              </div>
             </a>
-          </li>
-          <li>
+          </div>
+          <div class="gallery-item">
             <a
               href="img/T-Sobre02.jpg"
               class="thumbnail fancybox"
@@ -641,12 +650,15 @@
             >
               <img
                 src="img/T-Sobre02.jpg"
-                alt="T-Sobre 02"
+                alt="Tansen 2"
                 class="rounded shadow-lg hover:scale-105 transition-transform duration-300 w-full"
               />
+              <div class="gallery-overlay">
+                <span>Ampliar</span>
+              </div>
             </a>
-          </li>
-          <li>
+          </div>
+          <div class="gallery-item">
             <a
               href="img/T-Sobre03.jpg"
               class="thumbnail fancybox"
@@ -654,12 +666,15 @@
             >
               <img
                 src="img/T-Sobre03.jpg"
-                alt="T-Sobre 03"
+                alt="Tansen 3"
                 class="rounded shadow-lg hover:scale-105 transition-transform duration-300 w-full"
               />
+              <div class="gallery-overlay">
+                <span>Ampliar</span>
+              </div>
             </a>
-          </li>
-          <li>
+          </div>
+          <div class="gallery-item">
             <a
               href="img/T-Sobre04.jpg"
               class="thumbnail fancybox"
@@ -667,69 +682,17 @@
             >
               <img
                 src="img/T-Sobre04.jpg"
-                alt="T-Sobre 04"
+                alt="Tansen 4"
                 class="rounded shadow-lg hover:scale-105 transition-transform duration-300 w-full"
               />
+              <div class="gallery-overlay">
+                <span>Ampliar</span>
+              </div>
             </a>
-          </li>
-        </ul>
+          </div>
+        </div>
       </div>
-    </div>
-
-    <div id="termocontraccion" class="bg-gray-100 py-8 fadeInScroll">
-      <div class="container">
-        <h2 class="text-3xl font-bold text-center mb-4">Operación Sencilla</h2>
-        <p class="lead text-center mb-6">
-          Aprende cómo operar nuestros productos con estos videos.
-        </p>
-        <ul class="flex justify-between mt-6 gap-5">
-          <li class="w-1/3">
-            <div class="video-wrapper">
-              <iframe
-                src="https://www.youtube.com/embed/yTbm-GjbdT8"
-                frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowfullscreen
-                class="w-full h-48 rounded shadow-lg"
-              ></iframe>
-            </div>
-          </li>
-          <li class="w-1/3">
-            <div class="video-wrapper">
-              <iframe
-                src="https://www.youtube.com/embed/Qkyq97oz5nQ"
-                frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowfullscreen
-                class="w-full h-48 rounded shadow-lg"
-              ></iframe>
-            </div>
-          </li>
-          <li class="w-1/3">
-            <div class="video-wrapper">
-              <iframe
-                src="https://www.youtube.com/embed/ffVNenFtuxM"
-                frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowfullscreen
-                class="w-full h-48 rounded shadow-lg"
-              ></iframe>
-            </div>
-          </li>
-          <li class="w-1/3">
-            <div class="video-wrapper">
-              <iframe
-                src="https://www.youtube.com/embed/r3eJfTNPBXY"
-                frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowfullscreen
-                class="w-full h-48 rounded shadow-lg"
-              ></iframe>
-            </div>
-          </li>
-        </ul>
-      </div>
-    </div>
+    </section>
 
     <!-- Agregar CSS para Fancybox -->
     <link
@@ -787,6 +750,56 @@
         transform: scale(1.05);
       }
     </style>
+
+    <section id="termocontraccion" class="fadeInScroll">
+      <div class="container">
+        <h2 class="section-title text-3xl font-bold text-center mb-4">
+          Operación Sencilla
+        </h2>
+        <div class="video-grid">
+          <div class="video-card">
+            <div class="video-wrapper">
+              <iframe
+                src="https://www.youtube.com/embed/yTbm-GjbdT8"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen
+              ></iframe>
+            </div>
+            <div class="video-title">Conjugada Manual</div>
+          </div>
+          <div class="video-card">
+            <div class="video-wrapper">
+              <iframe
+                src="https://www.youtube.com/embed/Qkyq97oz5nQ"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen
+              ></iframe>
+            </div>
+            <div class="video-title">Semi Automáticas</div>
+          </div>
+          <div class="video-card">
+            <div class="video-wrapper">
+              <iframe
+                src="https://www.youtube.com/embed/ffVNenFtuxM"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen
+              ></iframe>
+            </div>
+            <div class="video-title">Alta Producción</div>
+          </div>
+          <div class="video-card">
+            <div class="video-wrapper">
+              <iframe
+                src="https://www.youtube.com/embed/r3eJfTNPBXY"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen
+              ></iframe>
+            </div>
+            <div class="video-title">Alta Producción</div>
+          </div>
+        </div>
+      </div>
+    </section>
 
     <section
       id="contact"
