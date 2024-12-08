@@ -162,65 +162,6 @@
         animation: fadeInRight 0.5s ease-out;
       }
 
-      /* Gallery section */
-      #gallery {
-        padding: 5rem 0;
-        background-color: var(--gray-100);
-      }
-
-      .section-title {
-        text-align: center;
-        font-size: 2rem;
-        margin-bottom: 3rem;
-        animation: fadeInUp 0.5s ease-out;
-      }
-
-      .gallery-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-        gap: 1.5rem;
-      }
-
-      .gallery-item {
-        position: relative;
-        border-radius: 0.5rem;
-        overflow: hidden;
-        cursor: pointer;
-        animation: fadeInUp 0.5s ease-out;
-      }
-
-      .gallery-item img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        transition: transform 0.3s ease;
-      }
-
-      .gallery-item:hover img {
-        transform: scale(1.1);
-      }
-
-      .gallery-overlay {
-        position: absolute;
-        inset: 0;
-        background-color: rgba(0, 0, 0, 0.4);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        opacity: 0;
-        transition: opacity 0.3s ease;
-      }
-
-      .gallery-item:hover .gallery-overlay {
-        opacity: 1;
-      }
-
-      .gallery-overlay span {
-        color: white;
-        font-size: 1.125rem;
-        font-weight: 500;
-      }
-
       /* Video gallery */
       #termocontraccion {
         padding: 5rem 0;
@@ -520,41 +461,37 @@
       </div>
     </section>
 
-    <div id="features" class="bg-gray-100 py-16 fadeInScroll">
-      <div class="container">
-        <div class="row">
-          <div class="featurebox span4">
-            <div
-              class="card bg-white shadow-lg rounded-lg overflow-hidden text-center pt-4"
-            >
-              <img src="img/feature3.png" alt="" class="icon-size" />
-              <div class="p-4">
-                <h3 class="text-xl font-bold">DIFERENTES ANCHOS</h3>
-                <p class="text-gray-600">Entre 20 y 70 centímetros</p>
-              </div>
-            </div>
+    <!-- Features -->
+    <div id="features" class="bg-gray-100 py-8 fadeInScroll">
+      <div class="max-w-screen-xl px-4 mx-auto">
+        <h2 class="text-3xl font-bold text-center mb-4">
+          Características Destacadas
+        </h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+          <div class="featurebox text-center p-4 rounded shadow-lg bg-white">
+            <p>
+              <img src="img/feature3.png" alt="" class="mx-auto mb-2" />
+            </p>
+            <h3 class="text-xl font-semibold">DIFERENTES ANCHOS</h3>
+            <p class="text-gray-600">Entre 20 y 70 centímetros</p>
           </div>
-          <div class="featurebox span4">
-            <div
-              class="card bg-white shadow-lg rounded-lg overflow-hidden text-center pt-4"
-            >
-              <img src="img/icon.png" alt="" class="icon-size" />
-              <div class="p-4">
-                <h3 class="text-xl font-bold">ECONOMÍA</h3>
-                <p class="text-gray-600">Ahorre dinero sin perder calidad</p>
-              </div>
-            </div>
+          <div class="featurebox text-center p-4 rounded shadow-lg bg-white">
+            <p>
+              <img
+                src="img/icon.png"
+                alt=""
+                class="mx-auto mb-2"
+              />
+            </p>
+            <h3 class="text-xl font-semibold">ECONOMÍA</h3>
+            <p class="text-gray-600">Ahorre dinero sin perder calidad</p>
           </div>
-          <div class="featurebox span4">
-            <div
-              class="card bg-white shadow-lg rounded-lg overflow-hidden text-center pt-4"
-            >
-              <img src="img/house.png" alt="" class="icon-size" />
-              <div class="p-4">
-                <h3 class="text-xl font-bold">AMPLIO STOCK</h3>
-                <p class="text-gray-600">Entregas en 72 horas</p>
-              </div>
-            </div>
+          <div class="featurebox text-center p-4 rounded shadow-lg bg-white">
+            <p>
+              <img src="img/house.png" alt="" class="mx-auto mb-2" />
+            </p>
+            <h3 class="text-xl font-semibold">AMPLIO STOCK</h3>
+            <p class="text-gray-600">Entregas en 72 horas</p>
           </div>
         </div>
       </div>
@@ -598,6 +535,9 @@
       }
     </style>
 
+    <hr />    
+
+    <!-- Gallery -->
     <section id="gallery" class="bg-gray-100 py-8">
       <div class="container fadeInScroll">
         <h2 class="section-title text-3xl font-bold text-center mb-4">Fotos</h2>
@@ -616,7 +556,7 @@
                 class="rounded shadow-lg hover:scale-105 transition-transform duration-300 w-full"
               />
               <div class="gallery-overlay">
-                <span>Ver más</span>
+                <span>Ampliar</span>
               </div>
             </a>
           </div>
@@ -632,7 +572,7 @@
                 class="rounded shadow-lg hover:scale-105 transition-transform duration-300 w-full"
               />
               <div class="gallery-overlay">
-                <span>Ver más</span>
+                <span>Ampliar</span>
               </div>
             </a>
           </div>
@@ -648,7 +588,7 @@
                 class="rounded shadow-lg hover:scale-105 transition-transform duration-300 w-full"
               />
               <div class="gallery-overlay">
-                <span>Ver más</span>
+                <span>Ampliar</span>
               </div>
             </a>
           </div>
@@ -664,7 +604,7 @@
                 class="rounded shadow-lg hover:scale-105 transition-transform duration-300 w-full"
               />
               <div class="gallery-overlay">
-                <span>Ver más</span>
+                <span>Ampliar</span>
               </div>
             </a>
           </div>
