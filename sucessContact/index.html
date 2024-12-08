@@ -1,0 +1,637 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <title>Tansen</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css"
+    />
+    <link
+      rel="icon"
+      type="image/icon"
+      sizes="16x16"
+      href="../img/favicon.ico"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link rel="stylesheet" href="../css/shared.css" />
+
+    <meta name="msapplication-TileColor" content="#da532c" />
+    <meta name="theme-color" content="#ffffff" />
+
+    <style>
+      :root {
+        --primary-color: #2563eb;
+        --primary-hover: #1d4ed8;
+        --secondary-color: #f8fafc;
+        --text-color: #1e293b;
+        --bg-color: #ffffff;
+        --gray-100: #f1f5f9;
+        --gray-200: #e2e8f0;
+        --gray-800: #1e293b;
+        --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+        --shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+        --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1);
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        font-family: "Open Sans", sans-serif;
+        line-height: 1.6;
+        color: var(--text-color);
+        background-color: var(--bg-color);
+      }
+
+      .container {
+        width: 90%;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 1rem;
+      }
+
+      /* Header styles */
+      .navbar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        background-color: aliceblue;
+        z-index: 1000;
+        transition: all 0.3s ease;
+      }
+
+      .navbar.scrolled {
+        box-shadow: var(--shadow);
+        background-color: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(8px);
+      }
+
+      .navbar-inner {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1rem 0;
+      }
+
+      .logos-container {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+      }
+
+      .logo {
+        height: 40px;
+        width: auto;
+        transition: transform 0.3s ease;
+      }
+
+      .logo:hover {
+        transform: scale(1.05);
+      }
+
+      .nav {
+        display: flex;
+        list-style: none;
+        gap: 2rem;
+      }
+
+      .nav a {
+        color: var(--text-color);
+        text-decoration: none;
+        font-weight: 600;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        transition: all 0.3s ease;
+        padding: 0.5rem 1rem;
+        border-radius: 0.5rem;
+      }
+
+      .nav a:hover {
+        color: var(--primary-color);
+        background-color: var(--gray-100);
+      }
+
+      .nav i {
+        transition: transform 0.3s ease;
+      }
+
+      .nav a:hover i {
+        transform: scale(1.1);
+      }
+
+      .mobile-menu-btn {
+        display: none;
+        background: none;
+        border: none;
+        cursor: pointer;
+        padding: 0.5rem;
+      }
+
+      /* Hero section */
+      #hero {
+        padding: 8rem 0 4rem;
+        background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+      }
+
+      .hero-animation-left {
+        animation: fadeInLeft 0.5s ease-out;
+      }
+
+      .hero-animation-right {
+        animation: fadeInRight 0.5s ease-out;
+      }
+
+      /* Gallery section */
+      #gallery {
+        padding: 5rem 0;
+        background-color: var(--gray-100);
+      }
+
+      .section-title {
+        text-align: center;
+        font-size: 2rem;
+        margin-bottom: 3rem;
+        animation: fadeInUp 0.5s ease-out;
+      }
+
+      .gallery-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 1.5rem;
+      }
+
+      .gallery-item {
+        position: relative;
+        border-radius: 0.5rem;
+        overflow: hidden;
+        cursor: pointer;
+        animation: fadeInUp 0.5s ease-out;
+      }
+
+      .gallery-item img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.3s ease;
+      }
+
+      .gallery-item:hover img {
+        transform: scale(1.1);
+      }
+
+      .gallery-overlay {
+        position: absolute;
+        inset: 0;
+        background-color: rgba(0, 0, 0, 0.4);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+      }
+
+      .gallery-item:hover .gallery-overlay {
+        opacity: 1;
+      }
+
+      .gallery-overlay span {
+        color: white;
+        font-size: 1.125rem;
+        font-weight: 500;
+      }
+
+      /* Video gallery */
+      #termocontraccion {
+        padding: 5rem 0;
+        background-color: var(--bg-color);
+      }
+
+      .video-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2rem;
+      }
+
+      .video-card {
+        background-color: var(--bg-color);
+        border-radius: 0.5rem;
+        overflow: hidden;
+        box-shadow: var(--shadow);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        animation: fadeInUp 0.5s ease-out;
+      }
+
+      .video-card:hover {
+        transform: translateY(-5px);
+        box-shadow: var(--shadow-lg);
+      }
+
+      .video-wrapper {
+        position: relative;
+        padding-bottom: 56.25%;
+        height: 0;
+      }
+
+      .video-wrapper iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border: none;
+      }
+
+      .video-title {
+        padding: 1rem;
+        text-align: center;
+        font-weight: 600;
+      }
+
+      /* Contact section */
+      #contact {
+        padding: 5rem 0;
+        background-color: var(--gray-100);
+      }
+
+      .contact-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 3rem;
+      }
+
+      .contact-info {
+        animation: fadeInLeft 0.5s ease-out;
+      }
+
+      .contact-form {
+        animation: fadeInRight 0.5s ease-out;
+      }
+
+      .contact-item {
+        display: flex;
+        align-items: flex-start;
+        gap: 1rem;
+        margin-bottom: 1.5rem;
+      }
+
+      .contact-item i {
+        color: var(--primary-color);
+        font-size: 1.25rem;
+      }
+
+      .map-container {
+        margin-top: 2rem;
+        border-radius: 0.5rem;
+        overflow: hidden;
+        box-shadow: var(--shadow);
+      }
+
+      /* Footer */
+      #footer {
+        background-color: var(--gray-800);
+        color: white;
+        padding: 2rem 0;
+        text-align: center;
+      }
+
+      .float {
+        position: fixed;
+        width: 60px;
+        height: 60px;
+        bottom: 40px;
+        right: 40px;
+        background-color: #25d366;
+        color: #fff;
+        border-radius: 50px;
+        text-align: center;
+        font-size: 30px;
+        box-shadow: 2px 2px 3px #999;
+        z-index: 100;
+      }
+
+      .my-float {
+        margin-top: 16px;
+      }
+
+      /* Animations */
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @keyframes fadeInLeft {
+        from {
+          opacity: 0;
+          transform: translateX(-20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateX(0);
+        }
+      }
+
+      @keyframes fadeInRight {
+        from {
+          opacity: 0;
+          transform: translateX(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateX(0);
+        }
+      }
+
+      /* Modal */
+      .modal {
+        display: none;
+        position: fixed;
+        inset: 0;
+        background-color: rgba(0, 0, 0, 0.8);
+        z-index: 1100;
+        padding: 2rem;
+        animation: fadeIn 0.3s ease-out;
+      }
+
+      .modal.active {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .modal-content {
+        max-width: 90%;
+        max-height: 90vh;
+      }
+
+      .modal-content img {
+        max-width: 100%;
+        max-height: 90vh;
+        object-fit: contain;
+      }
+
+      /* Responsive design */
+      @media (max-width: 768px) {
+        .mobile-menu-btn {
+          display: block;
+        }
+
+        .nav {
+          display: none;
+          position: absolute;
+          top: 100%;
+          left: 0;
+          right: 0;
+          background-color: var(--bg-color);
+          padding: 1rem;
+          flex-direction: column;
+          gap: 0.5rem;
+          box-shadow: var(--shadow);
+        }
+
+        .nav.active {
+          display: flex;
+        }
+
+        .contact-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- Navbar -->
+    <header class="navbar">
+      <div class="container">
+        <div class="navbar-inner">
+          <div class="logos-container">
+            <a href="/">
+              <img src="img/logo1.png" alt="Logo 1" class="logo" />
+            </a>
+            <a href="/">
+              <img src="img/logo.png" alt="Logo 2" class="logo" />
+            </a>
+          </div>
+          <button class="mobile-menu-btn">
+            <i class="fas fa-bars"></i>
+          </button>
+          <nav>
+            <ul class="nav">
+              <li>
+                <a href="/"><i class="fas fa-home"></i>Home</a>
+              </li>
+              <li>
+                <a href="/t-film/index.html"
+                  ><i class="fas fa-sheet-plastic"></i>t-Film</a
+                >
+              </li>
+              <li>
+                <a href="/t-aire/index.html"
+                  ><i class="fas fa-wind"></i>t-Aire</a
+                >
+              </li>
+              <li>
+                <a href="/t-sobre/index.html"
+                  ><i class="fas fa-envelope"></i>t-Sobre</a
+                >
+              </li>
+              <li>
+                <a href="#contact"
+                  ><i class="fas fa-address-card"></i>Contacto</a
+                >
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </header>
+
+    <!-- Hero -->
+    <section class="bg-white">
+      <div
+        class="grid max-w-screen-xl px-4 pt-20 pb-8 mx-auto lg:gap-8 xl:gap-0 lg:py-16 lg:grid-cols-12 lg:pt-28"
+      >
+        <div
+          class="mr-auto place-self-center lg:col-span-7 hero-animation-left"
+        >
+          <h1
+            class="max-w-2xl mb-4 text-4xl font-extrabold leading-none tracking-tight md:text-5xl xl:text-6xl"
+          >
+            Gracias por su contacto
+          </h1>
+          <p
+            class="max-w-2xl mb-6 font-light text-gray-500 lg:mb-8 md:text-lg lg:text-xl"
+          >
+            A la brevedad nos pondremos en contacto con usted
+          </p>
+          <a
+            href="/"
+            class="mb-4 text-2xl font-extrabold leading-none tracking-tight md:text-3xl xl:text-4xl"
+          >
+            Volver al inicio
+          </a>
+        </div>
+        <div class="hidden lg:mt-0 lg:col-span-5 lg:flex hero-animation-right">
+          <img src="img/question.jpg" alt="hero image" class="object-contain" />
+        </div>
+      </div>
+    </section>
+
+    <footer id="footer">
+      <div class="container">
+        <p>&copy; 2024 Tansen ®. Todos los derechos reservados.</p>
+        <a
+          href="https://api.whatsapp.com/send?phone=5491153882421&text=Hola"
+          class="float"
+          target="_blank"
+        >
+          <i class="fa fa-whatsapp my-float"></i>
+        </a>
+      </div>
+    </footer>
+
+    <script>
+      // Navbar scroll effect
+      const navbar = document.querySelector(".navbar");
+      window.addEventListener("scroll", () => {
+        if (window.scrollY > 0) {
+          navbar.classList.add("scrolled");
+        } else {
+          navbar.classList.remove("scrolled");
+        }
+      });
+
+      // Mobile menu toggle
+      const menuBtn = document.querySelector(".mobile-menu-btn");
+      const nav = document.querySelector(".nav");
+      menuBtn.addEventListener("click", () => {
+        nav.classList.toggle("active");
+      });
+
+      // Smooth scroll
+      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener("click", function (e) {
+          e.preventDefault();
+          const target = document.querySelector(this.getAttribute("href"));
+          if (target) {
+            const offset = navbar.offsetHeight;
+            const targetPosition =
+              target.getBoundingClientRect().top + window.pageYOffset - offset;
+            window.scrollTo({
+              top: targetPosition,
+              behavior: "smooth",
+            });
+            // Close mobile menu if open
+            nav.classList.remove("active");
+          }
+        });
+      });
+
+      // Image modal
+      const modal = document.getElementById("imageModal");
+      const modalImg = modal.querySelector("img");
+      const galleryItems = document.querySelectorAll(".gallery-item");
+
+      galleryItems.forEach((item) => {
+        item.addEventListener("click", () => {
+          modal.classList.add("active");
+          modalImg.src = item.dataset.src;
+        });
+      });
+
+      modal.addEventListener("click", () => {
+        modal.classList.remove("active");
+      });
+
+      // Form submissions
+      const forms = document.querySelectorAll("form");
+      forms.forEach((form) => {
+        form.addEventListener("submit", (e) => {
+          e.preventDefault();
+          // Add your form submission logic here
+          alert("Formulario enviado con éxito!");
+          form.reset();
+        });
+      });
+
+      // Intersection Observer for animations
+      const observerOptions = {
+        threshold: 0.1,
+        rootMargin: "0px 0px -50px 0px",
+      };
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.style.opacity = "1";
+            entry.target.style.transform = "translateY(0)";
+          }
+        });
+      }, observerOptions);
+
+      document
+        .querySelectorAll(
+          ".section-title, .gallery-item, .video-card, .contact-info, .contact-form"
+        )
+        .forEach((el) => {
+          el.style.opacity = "0";
+          el.style.transform = "translateY(20px)";
+          observer.observe(el);
+        });
+
+      // Slider functionality
+      let slideIndex = 0;
+      const slides = document.querySelectorAll(".slide");
+
+      function showSlides() {
+        for (let i = 0; i < slides.length; i++) {
+          slides[i].style.display = "none";
+        }
+        slideIndex++;
+        if (slideIndex > slides.length) {
+          slideIndex = 1;
+        }
+        slides[slideIndex - 1].style.display = "block";
+        setTimeout(showSlides, 3000); // Change image every 3 seconds
+      }
+
+      showSlides(); // Start the slideshow
+    </script>
+  </body>
+</html>

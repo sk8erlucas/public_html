@@ -1,5 +1,4 @@
-﻿
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="es">
   <head>
     <meta charset="utf-8" />
@@ -14,8 +13,20 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css"
     />
 
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css"
+    />
     <script src="https://cdn.tailwindcss.com"></script>
+
+    <link
+      rel="icon"
+      type="image/icon"
+      sizes="16x16"
+      href="../img/favicon.ico"
+    />
+
+    <link rel="stylesheet" href="../css/shared.css" />
 
     <meta name="msapplication-TileColor" content="#da532c" />
     <meta name="theme-color" content="#ffffff" />
@@ -467,13 +478,19 @@
                 <a href="/"><i class="fas fa-home"></i>Home</a>
               </li>
               <li>
-                <a href="/t-film/index.html"><i class="fas fa-sheet-plastic"></i>t-Film</a>
+                <a href="/t-film/index.html"
+                  ><i class="fas fa-sheet-plastic"></i>t-Film</a
+                >
               </li>
               <li>
-                <a href="/t-aire/index.html"><i class="fas fa-wind"></i>t-Aire</a>
+                <a href="/t-aire/index.html"
+                  ><i class="fas fa-wind"></i>t-Aire</a
+                >
               </li>
               <li>
-                <a href="/t-sobre/index.html"><i class="fas fa-envelope"></i>t-Sobre</a>
+                <a href="/t-sobre/index.html"
+                  ><i class="fas fa-envelope"></i>t-Sobre</a
+                >
               </li>
               <li>
                 <a href="#contact"
@@ -497,21 +514,20 @@
           <h1
             class="max-w-2xl mb-4 text-4xl font-extrabold leading-none tracking-tight md:text-5xl xl:text-6xl"
           >
-          Ideal Sobres
+            Ideal Sobres
           </h1>
           <h1
             class="max-w-2xl mb-4 text-4xl font-extrabold leading-none tracking-tight md:text-5xl xl:text-6xl"
           >
-          E-Commerce
+            E-Commerce
           </h1>
 
           <p
             class="max-w-2xl mb-6 font-light text-gray-500 lg:mb-8 md:text-lg lg:text-xl"
           >
-          Seguros e Inviolables
-          100% opacos (no se ve que transportan)
-          Protección contra humedad, lluvia o salpicaduras
-          Máxima eficiencia con aprovechamiento total
+            Seguros e Inviolables 100% opacos (no se ve que transportan)
+            Protección contra humedad, lluvia o salpicaduras Máxima eficiencia
+            con aprovechamiento total
           </p>
 
           <h2
@@ -527,98 +543,165 @@
       </div>
     </section>
 
-    <div id="features" class="bg-gray-100 py-8">
+    <!-- Features -->
+    <div id="features" class="bg-gray-100 py-8 fadeInScroll">
       <div class="max-w-screen-xl px-4 mx-auto">
-        <h2 class="text-3xl font-bold text-center mb-4">Características Destacadas</h2>
+        <h2 class="text-3xl font-bold text-center mb-4">
+          Características Destacadas
+        </h2>
         <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
           <div class="featurebox text-center p-4 rounded shadow-lg bg-white">
-            <p><img src="img/icon-safe-mail.png" alt="" class="mx-auto mb-2" /></p>
+            <p>
+              <img src="img/icon-safe-mail.png" alt="" class="mx-auto mb-2" />
+            </p>
             <h3 class="text-xl font-semibold">SOBRE INVIOLABLE</h3>
             <p class="text-gray-600">Se abre solo rompiéndolo</p>
           </div>
           <div class="featurebox text-center p-4 rounded shadow-lg bg-white">
-            <p><img src="img/icon-motorbike-Rain.png" alt="" class="mx-auto mb-2" /></p>
+            <p>
+              <img
+                src="img/icon-motorbike-Rain.png"
+                alt=""
+                class="mx-auto mb-2"
+              />
+            </p>
             <h3 class="text-xl font-semibold">ANTIHUMEDAD</h3>
             <p class="text-gray-600">Protege de lluvia y salpicaduras</p>
           </div>
           <div class="featurebox text-center p-4 rounded shadow-lg bg-white">
-            <p><img src="img/icon-close-eyes.png" alt="" class="mx-auto mb-2" /></p>
+            <p>
+              <img src="img/icon-close-eyes.png" alt="" class="mx-auto mb-2" />
+            </p>
             <h3 class="text-xl font-semibold">100% OPACO</h3>
             <p class="text-gray-600">Imposible ver contenido transportado</p>
           </div>
         </div>
       </div>
-    </div>  
+    </div>
 
-    <div id="gallery" class="bg-gray-100 py-8">
-      <div class="container">
-        <h2 class="text-3xl font-bold text-center mb-4">Fotos</h2>
-        <p class="lead text-center mb-6">
-          Descubre nuestra variedad de productos a través de imágenes.
-        </p>
-        <ul class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6">
-          <li>
-            <a href="img/T-Sobre01.jpg" class="thumbnail fancybox" data-fancybox="gallery">
-              <img src="img/T-Sobre01.jpg" alt="T-Sobre 01" class="rounded shadow-lg hover:scale-105 transition-transform duration-300 w-full" />
+    <style>
+      #features {
+        padding: 2rem 0;
+      }
+
+      .row {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+      }
+
+      .featurebox {
+        flex: 1 1 30%; /* Flex-grow, flex-shrink, flex-basis */
+        margin: 10px; /* Espaciado entre tarjetas */
+      }
+
+      .card {
+        transition: transform 0.3s, box-shadow 0.3s;
+      }
+
+      .card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+      }
+
+      .icon-size {
+        width: 80px; /* Ajusta el tamaño como desees */
+        height: auto; /* Mantiene la proporción */
+        margin: 0 auto 16px; /* Centra la imagen y añade espaciado inferior */
+      }
+
+      @media (max-width: 768px) {
+        .featurebox {
+          flex: 1 1 100%; /* Una tarjeta por fila en pantallas pequeñas */
+        }
+      }
+    </style>
+
+    <hr />
+
+    <!-- Gallery -->
+    <section id="gallery" class="bg-gray-100 py-8">
+      <div class="container fadeInScroll">
+        <h2 class="section-title text-3xl font-bold text-center mb-4">Fotos</h2>
+        <div
+          class="gallery-grid grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6"
+        >
+          <div class="gallery-item">
+            <a
+              href="img/T-Sobre01.jpg"
+              class="thumbnail fancybox"
+              data-fancybox="gallery"
+            >
+              <img
+                src="img/T-Sobre01.jpg"
+                alt="Tansen 1"
+                class="rounded shadow-lg hover:scale-105 transition-transform duration-300 w-full"
+              />
+              <div class="gallery-overlay">
+                <span>Ampliar</span>
+              </div>
             </a>
-          </li>
-          <li>
-            <a href="img/T-Sobre02.jpg" class="thumbnail fancybox" data-fancybox="gallery">
-              <img src="img/T-Sobre02.jpg" alt="T-Sobre 02" class="rounded shadow-lg hover:scale-105 transition-transform duration-300 w-full" />
+          </div>
+          <div class="gallery-item">
+            <a
+              href="img/T-Sobre02.jpg"
+              class="thumbnail fancybox"
+              data-fancybox="gallery"
+            >
+              <img
+                src="img/T-Sobre02.jpg"
+                alt="Tansen 2"
+                class="rounded shadow-lg hover:scale-105 transition-transform duration-300 w-full"
+              />
+              <div class="gallery-overlay">
+                <span>Ampliar</span>
+              </div>
             </a>
-          </li>
-          <li>
-            <a href="img/T-Sobre03.jpg" class="thumbnail fancybox" data-fancybox="gallery">
-              <img src="img/T-Sobre03.jpg" alt="T-Sobre 03" class="rounded shadow-lg hover:scale-105 transition-transform duration-300 w-full" />
+          </div>
+          <div class="gallery-item">
+            <a
+              href="img/T-Sobre03.jpg"
+              class="thumbnail fancybox"
+              data-fancybox="gallery"
+            >
+              <img
+                src="img/T-Sobre03.jpg"
+                alt="Tansen 3"
+                class="rounded shadow-lg hover:scale-105 transition-transform duration-300 w-full"
+              />
+              <div class="gallery-overlay">
+                <span>Ampliar</span>
+              </div>
             </a>
-          </li>
-          <li>
-            <a href="img/T-Sobre04.jpg" class="thumbnail fancybox" data-fancybox="gallery">
-              <img src="img/T-Sobre04.jpg" alt="T-Sobre 04" class="rounded shadow-lg hover:scale-105 transition-transform duration-300 w-full" />
+          </div>
+          <div class="gallery-item">
+            <a
+              href="img/T-Sobre04.jpg"
+              class="thumbnail fancybox"
+              data-fancybox="gallery"
+            >
+              <img
+                src="img/T-Sobre04.jpg"
+                alt="Tansen 4"
+                class="rounded shadow-lg hover:scale-105 transition-transform duration-300 w-full"
+              />
+              <div class="gallery-overlay">
+                <span>Ampliar</span>
+              </div>
             </a>
-          </li>
-        </ul>
+          </div>
+        </div>
       </div>
-    </div>
-    
-   
-    
-    <div id="termocontraccion" class="bg-gray-100 py-8">
-      <div class="container">
-        <h2 class="text-3xl font-bold text-center mb-4">Operación Sencilla</h2>
-        <p class="lead text-center mb-6">
-          Aprende cómo operar nuestros productos con estos videos.
-        </p>
-        <ul class="flex justify-between mt-6 gap-5">
-          <li class="w-1/3">
-            <div class="video-wrapper">
-              <iframe src="https://www.youtube.com/embed/yTbm-GjbdT8" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen class="w-full h-48 rounded shadow-lg"></iframe>
-            </div>
-          </li>
-          <li class="w-1/3">
-            <div class="video-wrapper">
-              <iframe src="https://www.youtube.com/embed/Qkyq97oz5nQ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen class="w-full h-48 rounded shadow-lg"></iframe>
-            </div>
-          </li>
-          <li class="w-1/3">
-            <div class="video-wrapper">
-              <iframe src="https://www.youtube.com/embed/ffVNenFtuxM" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen class="w-full h-48 rounded shadow-lg"></iframe>
-            </div>
-          </li>
-          <li class="w-1/3">
-            <div class="video-wrapper">
-              <iframe src="https://www.youtube.com/embed/r3eJfTNPBXY" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen class="w-full h-48 rounded shadow-lg"></iframe>
-            </div>
-          </li>
-        </ul>
-      </div>
-    </div>
-    
+    </section>
+
     <!-- Agregar CSS para Fancybox -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css"
+    />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script>
-    
+
     <!-- Estilos adicionales -->
     <style>
       .gallery-overlay {
@@ -635,23 +718,23 @@
         opacity: 0;
         transition: opacity 0.3s;
       }
-    
+
       .gallery-item {
         position: relative;
         overflow: hidden;
       }
-    
+
       .gallery-item:hover .gallery-overlay {
         opacity: 1;
       }
-    
+
       .video-wrapper {
         position: relative;
         padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
         height: 0;
         overflow: hidden;
       }
-    
+
       .video-wrapper iframe {
         position: absolute;
         top: 0;
@@ -662,13 +745,67 @@
         box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
         transition: transform 0.3s;
       }
-    
+
       .video-wrapper:hover iframe {
         transform: scale(1.05);
       }
     </style>
 
-    <section id="contact" style="padding: 40px; background-color: #f9f9f9">
+    <section id="termocontraccion" class="fadeInScroll">
+      <div class="container">
+        <h2 class="section-title text-3xl font-bold text-center mb-4">
+          Operación Sencilla
+        </h2>
+        <div class="video-grid">
+          <div class="video-card">
+            <div class="video-wrapper">
+              <iframe
+                src="https://www.youtube.com/embed/yTbm-GjbdT8"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen
+              ></iframe>
+            </div>
+            <div class="video-title">Conjugada Manual</div>
+          </div>
+          <div class="video-card">
+            <div class="video-wrapper">
+              <iframe
+                src="https://www.youtube.com/embed/Qkyq97oz5nQ"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen
+              ></iframe>
+            </div>
+            <div class="video-title">Semi Automáticas</div>
+          </div>
+          <div class="video-card">
+            <div class="video-wrapper">
+              <iframe
+                src="https://www.youtube.com/embed/ffVNenFtuxM"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen
+              ></iframe>
+            </div>
+            <div class="video-title">Alta Producción</div>
+          </div>
+          <div class="video-card">
+            <div class="video-wrapper">
+              <iframe
+                src="https://www.youtube.com/embed/r3eJfTNPBXY"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen
+              ></iframe>
+            </div>
+            <div class="video-title">Alta Producción</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section
+      id="contact"
+      class="fadeInScroll"
+      style="padding: 40px; background-color: #f9f9f9"
+    >
       <div class="container" style="max-width: 1200px; margin: auto">
         <div
           class="contact-grid"
@@ -907,8 +1044,9 @@
         form.addEventListener("submit", (e) => {
           e.preventDefault();
           // Add your form submission logic here
-          alert("Formulario enviado con éxito!");
+
           form.reset();
+          window.location.href = "/sucessContact/index.html";
         });
       });
 

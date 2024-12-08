@@ -21,6 +21,8 @@
     />
     <script src="https://cdn.tailwindcss.com"></script>
 
+    <link rel="stylesheet" href="./css/shared.css" />
+
     <meta name="msapplication-TileColor" content="#da532c" />
     <meta name="theme-color" content="#ffffff" />
 
@@ -371,26 +373,6 @@
         }
       }
 
-      .fadeInScroll {
-        view-timeline-name: --image;
-        view-timeline-axis: block;
-        animation-timeline: --image;
-        animation-name: fadeInScroll;
-        animation-range: entry 25% cover 50%;
-        animation-fill-mode: both;
-      }
-
-      @keyframes fadeInScroll {
-        from {
-          opacity: 0;
-          transform: translateY(50px);
-        }
-        to {
-          opacity: 1;
-          transform: translateY(0);
-        }
-      }
-
       /* Modal */
       .modal {
         display: none;
@@ -540,7 +522,7 @@
     <hr class="border-gray-300 my-2" />
 
     <!-- Nosotros section -->
-    <section class="py-24 relative">
+    <section class="py-24 relative fadeInScroll">
       <div class="w-full max-w-7xl px-4 md:px-5 lg:px-5 mx-auto">
         <div
           class="w-full justify-start items-center gap-12 grid lg:grid-cols-2 grid-cols-1"
@@ -553,13 +535,13 @@
             >
               <img
                 class="rounded-xl object-cover"
-                src="https://pagedone.io/asset/uploads/1717741205.png"
+                src="/img/about.jpg"
                 alt="about Us image"
               />
             </div>
             <img
               class="sm:ml-0 ml-auto rounded-xl object-cover"
-              src="https://pagedone.io/asset/uploads/1717741215.png"
+              src="/img/nosotros.jpeg"
               alt="about Us image"
             />
           </div>
@@ -573,65 +555,51 @@
                 <h2
                   class="text-gray-900 text-4xl font-bold font-manrope leading-normal lg:text-start text-center"
                 >
-                  Empowering Each Other to Succeed
+                  Sobre Nosotros
                 </h2>
                 <p
                   class="text-gray-500 text-base font-normal leading-relaxed lg:text-start text-center"
                 >
-                  Every project we've undertaken has been a collaborative
-                  effort, where every person involved has left their mark.
-                  Together, we've not only constructed buildings but also built
-                  enduring connections that define our success story.
+                  ¿Busca la protección perfecta para sus productos? Con más de
+                  30 años de experiencia, somos sus aliados en el embalaje. En
+                  TANSEN S.R.L, ofrecemos una amplia gama de soluciones, tanto
+                  propias como de las mejores marcas, diseñadas a medida para
+                  satisfacer sus necesidades específicas.
+                </p>
+
+                <p>
+                  Nuestra historia comienza hace tres décadas, cuando un grupo
+                  de apasionados por el embalaje decidió crear una empresa que
+                  priorizara la calidad y la innovación. Desde entonces, hemos
+                  evolucionado constantemente, adaptándonos a las demandas del
+                  mercado y a las necesidades de nuestros clientes. A lo largo
+                  de los años, hemos consolidado una reputación sólida en la
+                  industria, caracterizándonos por nuestro compromiso con la
+                  excelencia y la satisfacción del cliente.
+                </p>
+
+                <p>
+                  En TANSEN S.R.L, creemos que la protección de sus productos es
+                  fundamental para su éxito. Por eso, nos esforzamos por
+                  ofrecerle las mejores soluciones de embalaje del mercado,
+                  garantizando la seguridad y la integridad de sus productos
+                  durante el transporte. Nuestro equipo de expertos está
+                  dedicado a brindarle un servicio personalizado, asegurando que
+                  cada cliente reciba la atención y el soporte que necesita para
+                  lograr sus objetivos.
+                </p>
+
+                <p>
+                  Nuestro compromiso con la calidad y la innovación nos ha
+                  permitido convertirnos en líderes en el mercado de embalaje,
+                  ofreciendo soluciones de vanguardia que se adaptan a las
+                  necesidades de nuestros clientes. En TANSEN S.R.L, nos
+                  enorgullece ofrecerle las mejores soluciones de embalaje del
+                  mercado, garantizando la seguridad y la integridad de sus
+                  productos en todo momento.
                 </p>
               </div>
-              <div
-                class="w-full lg:justify-start justify-center items-center sm:gap-10 gap-5 inline-flex"
-              >
-                <div class="flex-col justify-start items-start inline-flex">
-                  <h3
-                    class="text-gray-900 text-4xl font-bold font-manrope leading-normal"
-                  >
-                    33+
-                  </h3>
-                  <h6
-                    class="text-gray-500 text-base font-normal leading-relaxed"
-                  >
-                    Years of Experience
-                  </h6>
-                </div>
-                <div class="flex-col justify-start items-start inline-flex">
-                  <h4
-                    class="text-gray-900 text-4xl font-bold font-manrope leading-normal"
-                  >
-                    125+
-                  </h4>
-                  <h6
-                    class="text-gray-500 text-base font-normal leading-relaxed"
-                  >
-                    Successful Projects
-                  </h6>
-                </div>
-                <div class="flex-col justify-start items-start inline-flex">
-                  <h4
-                    class="text-gray-900 text-4xl font-bold font-manrope leading-normal"
-                  >
-                    52+
-                  </h4>
-                  <h6
-                    class="text-gray-500 text-base font-normal leading-relaxed"
-                  >
-                    Happy Clients
-                  </h6>
-                </div>
-              </div>
             </div>
-            <button
-              class="sm:w-fit w-full px-3.5 py-2 bg-indigo-600 hover:bg-indigo-800 transition-all duration-700 ease-in-out rounded-lg shadow-[0px_1px_2px_0px_rgba(16,_24,_40,_0.05)] justify-center items-center flex"
-            >
-              <span class="px-1.5 text-white text-sm font-medium leading-6"
-                >Read More</span
-              >
-            </button>
           </div>
         </div>
       </div>
@@ -640,7 +608,7 @@
     <hr class="border-gray-300 my-2" />
 
     <!-- Sección de imágenes y botones -->
-    <section class="bg-white py-8">
+    <section class="bg-white py-8 fadeInScroll">
       <div class="max-w-screen-xl px-4 mx-auto lg:py-16">
         <h2 class="text-2xl font-bold text-center mb-8">
           Descubre Nuestras Novedades
@@ -734,7 +702,7 @@
     </style>
 
     <!-- Contact -->
-    <section id="contact" style="padding: 40px; background-color: #f9f9f9">
+    <section id="contact" style="padding: 40px; background-color: #f9f9f9" class="fadeInScroll">
       <div class="container" style="max-width: 1200px; margin: auto">
         <div
           class="contact-grid"
@@ -975,8 +943,9 @@
         form.addEventListener("submit", (e) => {
           e.preventDefault();
           // Add your form submission logic here
-          alert("Formulario enviado con éxito!");
+
           form.reset();
+          window.location.href = "/sucessContact/index.html";
         });
       });
 
