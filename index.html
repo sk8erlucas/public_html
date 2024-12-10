@@ -702,7 +702,11 @@
     </style>
 
     <!-- Contact -->
-    <section id="contact" style="padding: 40px; background-color: #f9f9f9" class="fadeInScroll">
+    <section
+      id="contact"
+      style="padding: 40px; background-color: #f9f9f9"
+      class="fadeInScroll"
+    >
       <div class="container" style="max-width: 1200px; margin: auto">
         <div
           class="contact-grid"
@@ -780,6 +784,7 @@
                   <input
                     type="text"
                     placeholder="Nombre y Apellido"
+                    name="nombre"
                     required
                     style="
                       width: 100%;
@@ -793,6 +798,7 @@
                   <input
                     type="email"
                     placeholder="Email"
+                    name="email"
                     required
                     style="
                       width: 100%;
@@ -806,6 +812,7 @@
                   <textarea
                     rows="4"
                     placeholder="Escriba su consulta..."
+                    name="message"
                     required
                     style="
                       width: 100%;
@@ -937,16 +944,39 @@
         modal.classList.remove("active");
       });
 
-      // Form submissions
-      const forms = document.querySelectorAll("form");
-      forms.forEach((form) => {
-        form.addEventListener("submit", (e) => {
-          e.preventDefault();
-          // Add your form submission logic here
+      // Form submission
+      const form = document.getElementById("contact-form");
+      form.addEventListener("submit", (e) => {
+        e.preventDefault();
 
-          form.reset();
-          window.location.href = "/sucessContact/index.html";
-        });
+        var formData = new FormData(form);
+
+        fetch("https://formspree.io/f/xanyzjry", {
+          method: "POST",
+          body: formData,
+          headers: {
+            Accept: "application/json",
+          },
+        })
+          .then((response) => {
+            if (response.ok) {
+              // Aquí puedes agregar cualquier lógica adicional antes de redirigir
+              console.log("Formulario enviado con éxito");
+              // Redirige a la página de éxito
+              window.location.href = "/sucessContact/index.html";
+            } else {
+              return response.json().then((data) => {
+                throw new Error(
+                  data.error || "Error en el envío del formulario"
+                );
+              });
+            }
+          })
+          .catch((error) => {
+            console.error("Error:", error);
+            alert("Error en el envío del formulario: " + error.message);
+            // Aquí puedes manejar los errores, por ejemplo, mostrando un mensaje al usuario
+          });
       });
 
       // Intersection Observer for animations
